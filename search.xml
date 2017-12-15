@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[解决ssh登录linux速度慢的问题(以centos7为例)]]></title>
+    <url>%2F2017%2F12%2F15%2F%E8%A7%A3%E5%86%B3ssh%E7%99%BB%E5%BD%95linux%E9%80%9F%E5%BA%A6%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98(%E4%BB%A5centos7%E4%B8%BA%E4%BE%8B)%2F</url>
+    <content type="text"><![CDATA[解决步骤: 先备份/etc/ssh/sshd_config,备份命令为 cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak 1.su (以root用户登录) 2.vi /etc/ssh/sshd_config (编辑配置文件) 3.输入 / ,查找GSSAPIAuthentication 赋值为no 4.输入 /，查找UseDNS,赋值为 no(该项默认不启用的，要把前面的#删除掉) 5.最后输入!wq保存文件并退出 6.重启systemctl restart sshd]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[(原创)随机串的产生,可以用于盐值]]></title>
     <url>%2F2017%2F12%2F15%2F(%E5%8E%9F%E5%88%9B)%E9%9A%8F%E6%9C%BA%E4%B8%B2%E7%9A%84%E4%BA%A7%E7%94%9F%2C%E5%8F%AF%E4%BB%A5%E7%94%A8%E4%BA%8E%E7%9B%90%E5%80%BC%2F</url>
     <content type="text"><![CDATA[之前要加密密码的时候，要加入盐值以加强强度，找了部分，又在网上的基础上修改了下(参考网页:http://blog.csdn.net/wangchangshuai0010/article/details/17188417)123456789101112131415161718192021222324252627282930313233343536//产生长度为length的随机字符串 char pSymbol[] = &#123;&apos;~&apos;,&apos;`&apos;,&apos;!&apos;,&apos;@&apos;,&apos;#&apos;,&apos;$&apos;,&apos;%&apos;,&apos;^&apos;,&apos;&amp;&apos;, &apos;*&apos;,&apos;(&apos;,&apos;)&apos;,&apos;_&apos;,&apos;+&apos;,&apos;-&apos;,&apos;=&apos;,&apos;&#123;&apos;,&apos;&#125;&apos;,&apos;|&apos;,&apos;[&apos;,&apos;]&apos;, &apos;:&apos;,&apos;;&apos;,&apos;&lt;&apos;,&apos;&gt;&apos;,&apos;?&apos;, &apos;,&apos;,&apos;.&apos;,&apos;\&quot;&apos;,&apos;\\&apos;,&apos;\&apos;&apos;,&apos;/&apos;&#125;;char* getRandomString(int length) &#123; int nRand, i; char* string; srand((unsigned) time(NULL )); if ((string = (char*) malloc(length + 1)) == NULL ) return NULL ; for (i = 0; i &lt; length - 1; i++) &#123; nRand = rand() % (sizeof(pSymbol) + 26 * 2 + 10); if (nRand &gt;= 0) &#123; if (nRand &lt; 26) string[i] = &apos;A&apos; + nRand; else if (nRand &lt; 52) string[i] = &apos;a&apos; + nRand - 26; else if (nRand &lt; 62) string[i] = &apos;1&apos; + nRand - 52; else if(nRand - 62 &lt; sizeof(pSymbol)) string[i] = pSymbol[nRand - 62]; else string[i] = &apos;x&apos;; &#125; else string[i] = &apos;x&apos;; &#125; string[length] = &apos;\0&apos;; return string; &#125;]]></content>
