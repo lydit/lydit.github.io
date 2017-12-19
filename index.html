@@ -1,0 +1,2236 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="lydit的博客">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="lydit的博客">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="lydit的博客">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/"/>
+
+
+
+
+
+  <title>lydit的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">lydit的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/18/(转载)error LNK2005 ...already defined in MSVCRTD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lydit">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lydit的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/18/(转载)error LNK2005 ...already defined in MSVCRTD/" itemprop="url">(转载)error LNK2005 ...already defined in MSVCRTD</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-18T15:51:22+08:00">
+                2017-12-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>编译错误：</p>
+<p>Error1error LNK2005: _CrtSetCheckCount already defined in MSVCRTD.lib(MSVCR110D.dll)\libcmtd.lib(dbgheap.obj)</p>
+<p>Error2error LNK2005: _calloc_dbg already defined in MSVCRTD.lib(MSVCR110D.dll)\libcmtd.lib(dbgheap.obj)</p>
+<p>Error3error LNK2005: _free_dbg already defined in MSVCRTD.lib(MSVCR110D.dll)\libcmtd.lib(dbgheap.obj)</p>
+<p>Error4error LNK2005: _malloc_dbg already defined in MSVCRTD.lib(MSVCR110D.dll)\libcmtd.lib(dbgheap.obj)</p>
+<p>Error5error LNK2005: _amsg_exit already defined in MSVCRTD.lib(MSVCR110D.dll)\libcmtd.lib(crt0dat.obj)</p>
+<p>Error6error LNK2005: _initterm_e already defined in MSVCRTD.lib(MSVCR110D.dll)\libcmtd.lib(crt0dat.obj)</p>
+<p>Error7error LNK2005: __CppXcptFilter already defined in MSVCRTD.lib(MSVCR110D.dll)\libcmtd.lib(winxfltr.obj)</p>
+<p>Error8error LNK2005: __crtCaptureCurrentContext already defined in MSVCRTD.lib(MSVCR110D.dll)\libcmtd.lib(winapisupp.obj)</p>
+<p>Error9error LNK2005: __crtCapturePreviousContext already defined in MSVCRTD.lib(MSVCR110D.dll)\libcmtd.lib(winapisupp.obj)</p>
+<p>Error10error LNK2005: __crtTerminateProcess already defined in MSVCRTD.lib(MSVCR110D.dll)\libcmtd.lib(winapisupp.obj)</p>
+<p>Error11error LNK2005: __crtUnhandledException already defined in MSVCRTD.lib(MSVCR110D.dll)\libcmtd.lib(winapisupp.obj)</p>
+<p>Error12error LNK2005: _lock already defined in MSVCRTD.lib(MSVCR110D.dll)\libcmtd.lib(mlock.obj)</p>
+<p>Error13error LNK2005: _unlock already defined in MSVCRTD.lib(MSVCR110D.dll)\libcmtd.lib(mlock.obj)</p>
+<p>Error14error LNK2005: __crt_debugger_hook already defined in MSVCRTD.lib(MSVCR110D.dll)\libcmtd.lib(dbghook.obj)</p>
+<p>Error15error LNK2005: “void __cdecl terminate(void)” (?terminate@@YAXXZ) already defined in MSVCRTD.lib(MSVCR110D.dll)\libcmtd.lib(hooks.obj)</p>
+<p>Error16error LNK2005: __xi_a already defined in MSVCRTD.lib(cinitexe.obj)\libcmtd.lib(crt0init.obj)</p>
+<p>Error17error LNK2005: __xi_z already defined in MSVCRTD.lib(cinitexe.obj)\libcmtd.lib(crt0init.obj)</p>
+<p>Error18error LNK2005: __xc_a already defined in MSVCRTD.lib(cinitexe.obj)\libcmtd.lib(crt0init.obj)</p>
+<p>Error19error LNK2005: __xc_z already defined in MSVCRTD.lib(cinitexe.obj)\libcmtd.lib(crt0init.obj)</p>
+<p>Error20error LNK2005: __iob_func already defined in MSVCRTD.lib(MSVCR110D.dll)\libcmtd.lib(_file.obj)</p>
+<p>Error21error LNK2005: _CrtDbgReportW already defined in MSVCRTD.lib(MSVCR110D.dll)\libcmtd.lib(dbgrptw.obj)</p>
+<p>原因：静态库或动态库编译时的设置的Runtime Library和当前工程不一样</p>
+<p>解决办法：工程Property -&gt; C/C++ -&gt; Code Generation -&gt; Runtime Library设置为统一的，例如Debug模式下，统一为MTd，Release模式下统一为MT</p>
+<p>转自：<a href="http://blog.csdn.net/kuikuijia/article/details/48056047" target="_blank" rel="noopener">http://blog.csdn.net/kuikuijia/article/details/48056047</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/15/(转载) socket 10038错误{winSock的一个bug 当closesocket多次错误使用时会导致问题}/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lydit">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lydit的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/15/(转载) socket 10038错误{winSock的一个bug 当closesocket多次错误使用时会导致问题}/" itemprop="url">(转载) socket：10038错误{winSock的一个bug：当closesocket多次错误使用时会导致问题}</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-15T17:52:24+08:00">
+                2017-12-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这几天想在一个开源的代码上进行修改，以期研发出一个产品出来。<br>       程序原来是单线程网络程序，需要修改为多线程，修改之后，总是出问题，辅助线程中的recv函数总是运行一阵子之后收到长度为-1的数据报，导致程序运行不正确甚至崩溃。<br>        由于是多线程，只好打日志进行调试，发现一个奇怪的问题。在A线程与B线程中，均使用了socket这个函数来产生socket，竟然会产生两个相同返回值的socket！也就是说，A线程与B线程能同时获得socket值为360的socket，这样当A正在使用360进行数据接收时，B去连接一把，A自然就出错了。</p>
+<pre><code> 这个问题实在是诡异，因为socket又不是COM组件，是可以直接在线程中共享的，究竟是出了什么问题呢，MSDN和网络上没有见到任何与此问题相关的内容。活脱脱地就是API出错了！按道理这是不可能的事情啊。
+  实在没辙了，只好review代码，发现程序中有很多这样的语句：
+ if( mSocket != INVALID_SOCKET )
+ {
+         closesocket( mSocket );
+  }
+ 这句有什么问题没有？呵呵看起来没什么问题，但是，不容置疑的是，肯定会导致一个socket被关闭多次。本着死马当着活马医的原则，进行修改，每次closesocket之后，将socket的值置为INVALID_SOCKET，运行程序，问题解决。
+
+  这个问题也太ft了，windows竟然连这个容错都没有做，按道理这是很好做的，socket实际上只是一个索引值，系统内核在关闭时如果发现已经关闭就不要做操作就可以了。现在看起来，内核里面貌似是一个socket缓冲池，程序在使用的时候使用计数来管理生命周期。这样当一个socket被关闭多次后，再创建改socket之后，系统可能会认为该socket是关闭的（因为计数小于等于0）。所以下次分配的时候，会将该索引重新分配出去。
+
+该问题在vista home版上出现，其他平台又没有问题不得而知，由此可以看出成对编码的好处以及面向对象封装的好处。
+</code></pre><p>转自:<a href="http://blog.csdn.net/chen495810242/article/details/42029825" target="_blank" rel="noopener">http://blog.csdn.net/chen495810242/article/details/42029825</a></p>
+<p>个人注释:在win7上的测试结果,当一个工程调用多个dll的时候，不同的dll之间使用socket这个函数来产生socket，返回值是可能一样的，就会发生连接无缘无故被断开的现象，查了两三天的说</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/15/解决ssh登录linux速度慢的问题(以centos7为例)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lydit">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lydit的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/15/解决ssh登录linux速度慢的问题(以centos7为例)/" itemprop="url">解决ssh登录linux速度慢的问题(以centos7为例)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-15T16:50:52+08:00">
+                2017-12-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>解决步骤:</p>
+<p>先备份/etc/ssh/sshd_config,备份命令为</p>
+<p>cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak</p>
+<p>1.su                                    (以root用户登录)</p>
+<p>2.vi /etc/ssh/sshd_config      (编辑配置文件)</p>
+<p>3.输入 / ,查找GSSAPIAuthentication 赋值为no</p>
+<p>4.输入 /，查找UseDNS,赋值为 no(该项默认不启用的，要把前面的#删除掉)</p>
+<p>5.最后输入!wq保存文件并退出</p>
+<p>6.重启systemctl restart sshd</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/15/(原创)随机串的产生,可以用于盐值/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lydit">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lydit的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/15/(原创)随机串的产生,可以用于盐值/" itemprop="url">(原创)随机串的产生,可以用于盐值</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-15T16:16:23+08:00">
+                2017-12-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>之前要加密密码的时候，要加入盐值以加强强度，找了部分，又在网上的基础上修改了下(参考网页:<a href="http://blog.csdn.net/wangchangshuai0010/article/details/17188417" target="_blank" rel="noopener">http://blog.csdn.net/wangchangshuai0010/article/details/17188417</a>)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">//产生长度为length的随机字符串</span><br><span class="line"></span><br><span class="line">　char pSymbol[] = &#123;&apos;~&apos;,&apos;`&apos;,&apos;!&apos;,&apos;@&apos;,&apos;#&apos;,&apos;$&apos;,&apos;%&apos;,&apos;^&apos;,&apos;&amp;&apos;,</span><br><span class="line">		　　　　&apos;*&apos;,&apos;(&apos;,&apos;)&apos;,&apos;_&apos;,&apos;+&apos;,&apos;-&apos;,&apos;=&apos;,&apos;&#123;&apos;,&apos;&#125;&apos;,&apos;|&apos;,&apos;[&apos;,&apos;]&apos;,</span><br><span class="line">		　　　　&apos;:&apos;,&apos;;&apos;,&apos;&lt;&apos;,&apos;&gt;&apos;,&apos;?&apos;,</span><br><span class="line">		　　　　&apos;,&apos;,&apos;.&apos;,&apos;\&quot;&apos;,&apos;\\&apos;,&apos;\&apos;&apos;,&apos;/&apos;&#125;;</span><br><span class="line">char* getRandomString(int length)  </span><br><span class="line">&#123;  </span><br><span class="line">    int nRand, i;  </span><br><span class="line">    char* string;  </span><br><span class="line">    srand((unsigned) time(NULL ));  </span><br><span class="line">    if ((string = (char*) malloc(length + 1)) == NULL )  </span><br><span class="line">        return NULL ;  </span><br><span class="line">  </span><br><span class="line">    for (i = 0; i &lt; length - 1; i++)  </span><br><span class="line">    &#123;  </span><br><span class="line">        nRand = rand() % (sizeof(pSymbol) + 26 * 2 + 10);</span><br><span class="line">        if (nRand &gt;= 0)</span><br><span class="line">        &#123;</span><br><span class="line">            if (nRand &lt; 26)</span><br><span class="line">                string[i] = &apos;A&apos; + nRand;  </span><br><span class="line">            else if (nRand &lt; 52)</span><br><span class="line">                string[i] = &apos;a&apos; + nRand - 26;  </span><br><span class="line">            else if (nRand &lt; 62)</span><br><span class="line">                string[i] = &apos;1&apos; + nRand - 52;</span><br><span class="line">            else if(nRand - 62 &lt; sizeof(pSymbol))</span><br><span class="line">                string[i] = pSymbol[nRand - 62];</span><br><span class="line">            else</span><br><span class="line">                string[i] = &apos;x&apos;;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">            string[i] = &apos;x&apos;;</span><br><span class="line">    &#125;  </span><br><span class="line">    string[length] = &apos;\0&apos;;  </span><br><span class="line">    return string;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/15/(原创)linux下Microsoftcpprestsdk支持https(server)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lydit">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lydit的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/15/(原创)linux下Microsoftcpprestsdk支持https(server)/" itemprop="url">(原创)linux下Microsoftcpprestsdk支持https(server)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-15T16:15:23+08:00">
+                2017-12-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>原创，转载请标明源地址</p>
+<p>之前看网上一堆的资料说Microsoft/cpprestsdk不支持https或者说只支持window下的https，差点就被误导了，没办法，只好自己去翻了下源代码</p>
+<p>先说明下linux版本把，centos7</p>
+<p>创建ssl证书啥的，网上一堆的资料，这边就不再说了，直接贴源代码了<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cpprest/uri.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cpprest/http_listener.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cpprest/http_client.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cpprest/asyncrt_utils.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cpprest/filestream.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(lib, <span class="meta-string">"cpprest_2_7.lib"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(lib, <span class="meta-string">"bcrypt.lib"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(lib, <span class="meta-string">"crypt32.lib"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(lib, <span class="meta-string">"winhttp.lib"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(lib, <span class="meta-string">"httpapi.lib"</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> web;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> http;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> utility;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> http::experimental::listener;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> web::http;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> web::http::client;</span><br><span class="line"><span class="comment">//using namespace concurrency;</span></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CommandHandler</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    CommandHandler() &#123;&#125;</span><br><span class="line">    CommandHandler(utility::<span class="keyword">string_t</span> url,http_listener_config server_config);</span><br><span class="line">    pplx::task&lt;<span class="keyword">void</span>&gt; open() &#123; <span class="keyword">return</span> m_listener.open(); &#125;</span><br><span class="line">    pplx::task&lt;<span class="keyword">void</span>&gt; close() &#123; <span class="keyword">return</span> m_listener.close(); &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">handle_get</span><span class="params">(http_request message)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">handle_post</span><span class="params">(http_request message)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">handle_put</span><span class="params">(http_request message)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">handle_del</span><span class="params">(http_request message)</span></span>;</span><br><span class="line">    http_listener m_listener;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">CommandHandler::CommandHandler(utility::<span class="keyword">string_t</span> url,http_listener_config server_config) : m_listener(url,server_config)</span><br><span class="line">&#123;</span><br><span class="line">    m_listener.support(methods::GET, <span class="built_in">std</span>::bind(&amp;CommandHandler::handle_get, <span class="keyword">this</span>, <span class="built_in">std</span>::placeholders::_1));</span><br><span class="line">    m_listener.support(methods::POST, <span class="built_in">std</span>::bind(&amp;CommandHandler::handle_post, <span class="keyword">this</span>, <span class="built_in">std</span>::placeholders::_1));</span><br><span class="line">    m_listener.support(methods::PUT, <span class="built_in">std</span>::bind(&amp;CommandHandler::handle_put, <span class="keyword">this</span>, <span class="built_in">std</span>::placeholders::_1));</span><br><span class="line">    m_listener.support(methods::DEL, <span class="built_in">std</span>::bind(&amp;CommandHandler::handle_del, <span class="keyword">this</span>, <span class="built_in">std</span>::placeholders::_1));</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">void</span> CommandHandler::handle_get(http_request message)</span><br><span class="line">&#123;</span><br><span class="line">    ucout &lt;&lt; <span class="string">"Method: "</span> &lt;&lt; message.method() &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    ucout &lt;&lt; <span class="string">"URI: "</span> &lt;&lt; http::uri::decode(message.relative_uri().path()) &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    ucout &lt;&lt; <span class="string">"Query: "</span> &lt;&lt; http::uri::decode(message.relative_uri().query()) &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    message.reply(status_codes::OK, <span class="string">"ACCEPTED"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> CommandHandler::handle_post(http_request message)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//std::unordered_map&lt;std::string, std::unordered_map&lt;std::string, std::vector&lt;unsigned char&gt;&gt;&gt; multipart_form_data = granada::httpex::parserex::ParseMultipartFormData(message);</span></span><br><span class="line">    ucout &lt;&lt; <span class="string">"Method: "</span> &lt;&lt; message.method() &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    ucout &lt;&lt; <span class="string">"URI: "</span> &lt;&lt; http::uri::decode(message.relative_uri().path()) &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    ucout &lt;&lt; <span class="string">"Query: "</span> &lt;&lt; http::uri::decode(message.relative_uri().query()) &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    message.reply(status_codes::OK, <span class="string">"POST"</span>);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> CommandHandler::handle_put(http_request message)</span><br><span class="line">&#123;</span><br><span class="line">    ucout &lt;&lt; <span class="string">"Method: "</span> &lt;&lt; message.method() &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    ucout &lt;&lt; <span class="string">"URI: "</span> &lt;&lt; http::uri::decode(message.relative_uri().path()) &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    ucout &lt;&lt; <span class="string">"Query: "</span> &lt;&lt; http::uri::decode(message.relative_uri().query()) &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    message.reply(status_codes::OK, <span class="string">"PUT"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> CommandHandler::handle_del(http_request message)</span><br><span class="line">&#123;</span><br><span class="line">    ucout &lt;&lt; <span class="string">"Method: "</span> &lt;&lt; message.method() &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    ucout &lt;&lt; <span class="string">"URI: "</span> &lt;&lt; http::uri::decode(message.relative_uri().path()) &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    ucout &lt;&lt; <span class="string">"Query: "</span> &lt;&lt; http::uri::decode(message.relative_uri().query()) &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    message.reply(status_codes::OK, <span class="string">"DEL"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">try</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//用C++ REST SDK编写HTTP服务端，需要在所有的网络接口上监听时，</span></span><br><span class="line">        <span class="comment">//Windows下应使用地址"http://*:8080"，</span></span><br><span class="line">        <span class="comment">//Linux下应使用地址"http://0.0.0.0:8080"。</span></span><br><span class="line">        </span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">char</span> * self_signed_cert = <span class="string">R"(</span></span><br><span class="line"><span class="string">-----BEGIN CERTIFICATE-----</span></span><br><span class="line"><span class="string">MIIDlzCCAn+gAwIBAgIJAP9ZV+1X94UjMA0GCSqGSIb3DQEBBQUAMGIxCzAJBgNV</span></span><br><span class="line"><span class="string">BAYTAkNOMQswCQYDVQQIDAJTSDELMAkGA1UEBwwCU0gxEjAQBgNVBAoMCU1JQ1JP</span></span><br><span class="line"><span class="string">U09GVDERMA8GA1UECwwISFBDLVBBQ0sxEjAQBgNVBAMMCWxvY2FsaG9zdDAeFw0x</span></span><br><span class="line"><span class="string">NTA4MTkwOTA0MjhaFw00MzAxMDMwOTA0MjhaMGIxCzAJBgNVBAYTAkNOMQswCQYD</span></span><br><span class="line"><span class="string">VQQIDAJTSDELMAkGA1UEBwwCU0gxEjAQBgNVBAoMCU1JQ1JPU09GVDERMA8GA1UE</span></span><br><span class="line"><span class="string">CwwISFBDLVBBQ0sxEjAQBgNVBAMMCWxvY2FsaG9zdDCCASIwDQYJKoZIhvcNAQEB</span></span><br><span class="line"><span class="string">BQADggEPADCCAQoCggEBALLv7AAPa+4wYpa+3tqc9HIHhh8kv/MpV2Dm+oKG27iH</span></span><br><span class="line"><span class="string">zOugMNAPqLzMAaWCzDRyw27I+jPS3pzAAu6rQ0v2H6XNrie1YEEV27j1WOUS9iFy</span></span><br><span class="line"><span class="string">vcf6Y+ywUKXvFlN/VM/ZFz9Z8U3jc7Y6unIyoUs8UdX/RRITspb2m7SUxlmLJ+4c</span></span><br><span class="line"><span class="string">qiLrHwstNB2NHIZN72oc8DaS5eBqBdT9h6NO62RSBTrAlR7Vk9eU/5trYkd5+PoC</span></span><br><span class="line"><span class="string">pispvU+7Fe24uVerGgU6Yoyd7DMj+3BpbG3g/VkOlGhgH0DNtbKu3v/XOmnzdZn6</span></span><br><span class="line"><span class="string">dzoOoGFNpG1NeH2Xv0vnvEZP6WG4h/TFSafBJMONNnMCAwEAAaNQME4wHQYDVR0O</span></span><br><span class="line"><span class="string">BBYEFO1mAjAmLk1J0iT93xfczAE5mxgzMB8GA1UdIwQYMBaAFO1mAjAmLk1J0iT9</span></span><br><span class="line"><span class="string">3xfczAE5mxgzMAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQEFBQADggEBAFB8AACf</span></span><br><span class="line"><span class="string">5O+sPe3PZ8IPgwZb+BCXdoXc2rngR/gOaYO019TZyNLuHRzW9FtplzW25IbQ9Jnc</span></span><br><span class="line"><span class="string">b+jmY2Ill7Zf3TX4OhHEwscJ1G2LBaqZfQlwSbYJmCzvRNSzSbF3RigNQD5Qhdph</span></span><br><span class="line"><span class="string">vVBdvVGTZnVeatjTOFKUyfhcXf4DMb6eMfaU6il/VJCSMW0j3hYNQjPm3V/PLxnG</span></span><br><span class="line"><span class="string">fd9T4hpCUd8MK2XG4RqJAzh6x/6v0fc6mRHBS5+qTWYSDGFwITrU1pP2L9qFegpm</span></span><br><span class="line"><span class="string">aNAom7bdENU8uivd+vrLnG2fKvFSssjVfaXpFLKAICfTJY9A3/CWnZ1AcbE5El7A</span></span><br><span class="line"><span class="string">adctopihoUrlAb0=</span></span><br><span class="line"><span class="string">-----END CERTIFICATE-----</span></span><br><span class="line"><span class="string">        )"</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">char</span> * private_key = <span class="string">R"(</span></span><br><span class="line"><span class="string">-----BEGIN PRIVATE KEY-----</span></span><br><span class="line"><span class="string">MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCy7+wAD2vuMGKW</span></span><br><span class="line"><span class="string">vt7anPRyB4YfJL/zKVdg5vqChtu4h8zroDDQD6i8zAGlgsw0csNuyPoz0t6cwALu</span></span><br><span class="line"><span class="string">q0NL9h+lza4ntWBBFdu49VjlEvYhcr3H+mPssFCl7xZTf1TP2Rc/WfFN43O2Orpy</span></span><br><span class="line"><span class="string">MqFLPFHV/0USE7KW9pu0lMZZiyfuHKoi6x8LLTQdjRyGTe9qHPA2kuXgagXU/Yej</span></span><br><span class="line"><span class="string">TutkUgU6wJUe1ZPXlP+ba2JHefj6AqYrKb1PuxXtuLlXqxoFOmKMnewzI/twaWxt</span></span><br><span class="line"><span class="string">4P1ZDpRoYB9AzbWyrt7/1zpp83WZ+nc6DqBhTaRtTXh9l79L57xGT+lhuIf0xUmn</span></span><br><span class="line"><span class="string">wSTDjTZzAgMBAAECggEAenzd8lScL1qTwlk6ODAE7SHVX/BKLWv5Um4KwdsLAVCE</span></span><br><span class="line"><span class="string">qC7p+yMdANAtuFzG6Ig+29Fb5KnOlUKjPzmhQZhjpZ4cPzZbg3IxDHV2uqi2L8NZ</span></span><br><span class="line"><span class="string">wlDWoik3q770a4fYSMd0sHsjQYwXo4CkLJQX8WaDJpgtcehl8g0yHPVSqe0mEkoL</span></span><br><span class="line"><span class="string">dxdqaZnxprchscxefWaGaysIxEO+V+ZOBaPNf4i8PmBKoMNczWZbLcdKhRL7aLeW</span></span><br><span class="line"><span class="string">ngPQp1xSWYoN8fPoonpL2qTSop3Nsc2INpwGcYPAj3vxdasC3+DZ8JEJI2AmxpVB</span></span><br><span class="line"><span class="string">13BLkd3nDzOwimZIlu9Fv+NMJ1vb9XdC249ZOqo68QKBgQDigkws1W429nqDtEtQ</span></span><br><span class="line"><span class="string">Dr5ebHTdP4gZlNt6vWx5obGLCMBAzoyubfNCCBTCYsCPj8hXxNfiPArPFFkIgEx9</span></span><br><span class="line"><span class="string">+w0n7BlaYL6SD2xD4q+YzA1/j4Loakxc7N9z8Cyu+/YHifvLhzwqgFnkLfFnVq9N</span></span><br><span class="line"><span class="string">TF8TatHUYcrbcpawJLz0wr/cnQKBgQDKPAYNTzqPLOOBaE4DfnJNn2zctGU8G5Xp</span></span><br><span class="line"><span class="string">0L/ED8O1t9AjjV2xVO8PDPNDZAxMzgnIbWeU9iWRSLbr7NloXElKh/QlITjAbSXe</span></span><br><span class="line"><span class="string">HsUruq1SmDgiaUhEtDaaJ1SqSZZWY2BZqNXMdILOCgvZGnOyyBR2U49zuNaRHyhm</span></span><br><span class="line"><span class="string">kmZMdIIKTwKBgQDezAk/hEQfvfuuNpZpzcbEu+uLgKVPfFMSfOYJEdnAB0CLvl80</span></span><br><span class="line"><span class="string">Z6QBzE8XEOmVjHkkk9NBjYuYOsyEhyY2OM2s+hfKBSUOKCt27q+IHRYd5bx+/afV</span></span><br><span class="line"><span class="string">M41rzc8141ISAlBw1rmAmLVSszojSmmuH7PZNpXkULineCPuaISQQEtWJQKBgQDD</span></span><br><span class="line"><span class="string">laVsvdEuowUsJEo+ys2VELhiAv1dUnh79u1fmrd2SV085P1WAYRqE+Y4qMvUg/em</span></span><br><span class="line"><span class="string">JVjmEeBnT+HI7fmdGpOvRyjxt92BDI5w8WVTU2lI1fqEHTpNZ9Te5WbWgfCpf9ax</span></span><br><span class="line"><span class="string">H74VzCCtT74Bq7l1kFdp0IqOKpcpJu8VtETHcG5LtQKBgQC4Tx7El1Xb4hsI4dvE</span></span><br><span class="line"><span class="string">h43j3KBb3evlz6vaqgz0BArahYAz2UkkOYDSOPs4K6aOxxXjO0BjqQqCx/tCPcU5</span></span><br><span class="line"><span class="string">AvLsTlswO+wDLXM1DoKxzFBZL5o8927niqW+vZpzyGc1uPmC1MG7+MDKdZsR+e+9</span></span><br><span class="line"><span class="string">XzJTD4slrGSJrcpLt/g/Jqqdjg==</span></span><br><span class="line"><span class="string">-----END PRIVATE KEY-----</span></span><br><span class="line"><span class="string">        )"</span>;</span><br><span class="line">        boost::asio::const_buffer cert(self_signed_cert, std::strlen(self_signed_cert));</span><br><span class="line">        boost::asio::const_buffer key(private_key, std::strlen(private_key));</span><br><span class="line"></span><br><span class="line">        http_listener_config server_config;</span><br><span class="line">        server_config.set_ssl_context_callback(</span><br><span class="line">            [&amp;](boost::asio::ssl::context&amp; ctx)</span><br><span class="line">            &#123;</span><br><span class="line">                ctx.set_options(boost::asio::ssl::context::default_workarounds);</span><br><span class="line">                ctx.use_certificate_chain(cert);</span><br><span class="line">                ctx.use_private_key(key, boost::asio::ssl::context::pem);</span><br><span class="line">            &#125;);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> nPort = <span class="number">8080</span>;</span><br><span class="line">        <span class="keyword">char</span> pAddr[<span class="number">32</span>];</span><br><span class="line">        <span class="built_in">memset</span>(pAddr,<span class="number">0</span>,<span class="keyword">sizeof</span>(pAddr));</span><br><span class="line">        <span class="built_in">sprintf</span>(pAddr,<span class="string">"https://0.0.0.0:%d"</span>,nPort);</span><br><span class="line">        utility::<span class="keyword">string_t</span> address = pAddr;<span class="comment">//U("http://0.0.0.0:8080");</span></span><br><span class="line">        <span class="function">uri_builder <span class="title">uri</span><span class="params">(address)</span></span>;</span><br><span class="line">        <span class="keyword">auto</span> addr = uri.to_uri().to_string();</span><br><span class="line">        <span class="function">CommandHandler <span class="title">handler</span><span class="params">(addr,server_config)</span></span>;</span><br><span class="line">        handler.open().wait();</span><br><span class="line">        ucout &lt;&lt; utility::<span class="keyword">string_t</span>(U(<span class="string">"Listening for requests at: "</span>)) &lt;&lt; addr &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">        ucout &lt;&lt; U(<span class="string">"Press ENTER key to quit..."</span>) &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">string</span> line;</span><br><span class="line">        <span class="built_in">std</span>::getline(<span class="built_in">std</span>::<span class="built_in">cin</span>, line);</span><br><span class="line">        handler.close().wait();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">catch</span> (<span class="built_in">std</span>::exception&amp; ex)</span><br><span class="line">    &#123;</span><br><span class="line">        ucout &lt;&lt; U(<span class="string">"Exception: "</span>) &lt;&lt; ex.what() &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">        ucout &lt;&lt; U(<span class="string">"Press ENTER key to quit..."</span>) &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">string</span> line;</span><br><span class="line">        <span class="built_in">std</span>::getline(<span class="built_in">std</span>::<span class="built_in">cin</span>, line);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>下面是访问结果</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7310251-4c831d4de0b84339.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/15/(原创)foef注意事项/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lydit">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lydit的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/15/(原创)foef注意事项/" itemprop="url">(原创)foef注意事项</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-15T16:14:26+08:00">
+                2017-12-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>原创内容，转载请标明原文地址</p>
+<p>我们先来看下下面的代码<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取文件大小</span></span><br><span class="line"><span class="function">DWORD <span class="title">Get_File_Size</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* m_FilePath)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">long</span> size;</span><br><span class="line">    <span class="keyword">if</span> (_access(m_FilePath, <span class="number">0</span>) == <span class="number">-1</span>)<span class="comment">//文件不存在 2013.09.24</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    FILE* fp = fopen( m_FilePath, <span class="string">"rb"</span> );</span><br><span class="line">    <span class="keyword">if</span>(fp==<span class="literal">NULL</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    fseek( fp, SEEK_SET, SEEK_END );</span><br><span class="line">    size=ftell(fp);</span><br><span class="line">    fclose(fp);</span><br><span class="line">    <span class="keyword">return</span> size;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">BYTE bReadBuf[<span class="number">1024</span>*<span class="number">100</span>];</span><br><span class="line">    DWORD dwFileSize = Get_File_Size(<span class="string">"C:\\pub.txt"</span>);</span><br><span class="line">    AfxMessageBox(IntToStr(dwFileSize));</span><br><span class="line">    FILE *fp = fopen(<span class="string">"C:\\pub.txt"</span>,<span class="string">"rb"</span>);</span><br><span class="line">    <span class="keyword">if</span> (fp != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        fread(bReadBuf,dwFileSize,<span class="number">1</span>,fp);</span><br><span class="line">        <span class="keyword">if</span> (!feof(fp))</span><br><span class="line">            AfxMessageBox(<span class="string">"1"</span>);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            AfxMessageBox(<span class="string">"2"</span>);</span><br><span class="line">        <span class="keyword">int</span> nRe = fread(bReadBuf,<span class="number">1</span>,<span class="number">1</span>,fp);</span><br><span class="line">        AfxMessageBox(IntToStr(nRe));</span><br><span class="line">        <span class="keyword">if</span> (!feof(fp))</span><br><span class="line">            AfxMessageBox(<span class="string">"1"</span>);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            AfxMessageBox(<span class="string">"2"</span>);</span><br><span class="line">        fclose(fp);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>其中pub.txt的文件属性为<br><img src="http://upload-images.jianshu.io/upload_images/7310251-7b3ff96c99dad0a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>弹出的内容分别为64，1，0，2</p>
+<p>获取出来的文件大小是正确的，但是如果按照这个大小去读取的话，是会发现，feof返回的是true，但是继续去读取的话，又读取不出来数据，但是这个时候再次判断feof则返回false了，</p>
+<p>原因在于，feof只有只有在读取超过的情况下，才会返回false</p>
+<p>具体的原因可以看下：<a href="http://baike.baidu.com/link?url=mdL8HEylLCJhN1dD6ZKq2EbBexXGn_GEfTDvEh45LFt7PSU4g3iOmPuQWfuOQ79kRxOCqyNUWqkt88iCPCqd9q" target="_blank" rel="noopener">http://baike.baidu.com/link?url=mdL8HEylLCJhN1dD6ZKq2EbBexXGn_GEfTDvEh45LFt7PSU4g3iOmPuQWfuOQ79kRxOCqyNUWqkt88iCPCqd9q</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/15/(转载)SHA-256算法 C语言实现/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lydit">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lydit的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/15/(转载)SHA-256算法 C语言实现/" itemprop="url">(转载)SHA-256算法 C语言实现</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-15T16:08:50+08:00">
+                2017-12-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1.如果出现 _ftelli64未定义 的错误，将_ftelli64替换为ftello64。visual c应该不会有这种错误。<br>2.函数的第三个参数是计算后的字符串形式，不需要再转换，详情看示例代码。<br>3.默认计算结果是大写形式，如需小写，将函数中末尾处所有 %08X 替换为 %08x 即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/*用法示例*/</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line"></span><br><span class="line">extern char* StrSHA256(const char* str, long long length, char* sha256);</span><br><span class="line"></span><br><span class="line">int main(void)&#123;</span><br><span class="line">    char text[] = &quot;blackkitty&quot;;</span><br><span class="line">    char sha256[65];</span><br><span class="line">    StrSHA256(text,sizeof(text)-1,sha256);  // sizeof()计算的结果包含了末尾的&apos;\0&apos;应减1</span><br><span class="line">    puts(sha256);</span><br><span class="line">    puts(StrSHA256(text,sizeof(text)-1,sha256));    // 函数返回值即sha256，直接输出也可以</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7310251-629f7f1ff8519c2a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>使用在线加密验证</p>
+<p><a href="http://tool.oschina.net/encrypt?type=2" target="_blank" rel="noopener">http://tool.oschina.net/encrypt?type=2</a></p>
+<p>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line">#define SHA256_ROTL(a,b) (((a&gt;&gt;(32-b))&amp;(0x7fffffff&gt;&gt;(31-b)))|(a&lt;&lt;b))</span><br><span class="line">#define SHA256_SR(a,b) ((a&gt;&gt;b)&amp;(0x7fffffff&gt;&gt;(b-1)))</span><br><span class="line">#define SHA256_Ch(x,y,z) ((x&amp;y)^((~x)&amp;z))</span><br><span class="line">#define SHA256_Maj(x,y,z) ((x&amp;y)^(x&amp;z)^(y&amp;z))</span><br><span class="line">#define SHA256_E0(x) (SHA256_ROTL(x,30)^SHA256_ROTL(x,19)^SHA256_ROTL(x,10))</span><br><span class="line">#define SHA256_E1(x) (SHA256_ROTL(x,26)^SHA256_ROTL(x,21)^SHA256_ROTL(x,7))</span><br><span class="line">#define SHA256_O0(x) (SHA256_ROTL(x,25)^SHA256_ROTL(x,14)^SHA256_SR(x,3))</span><br><span class="line">#define SHA256_O1(x) (SHA256_ROTL(x,15)^SHA256_ROTL(x,13)^SHA256_SR(x,10))</span><br><span class="line">extern char* StrSHA256(const char* str, long long length, char* sha256)&#123;</span><br><span class="line">    /*</span><br><span class="line">    计算字符串SHA-256</span><br><span class="line">    参数说明：</span><br><span class="line">    str         字符串指针</span><br><span class="line">    length      字符串长度</span><br><span class="line">    sha256         用于保存SHA-256的字符串指针</span><br><span class="line">    返回值为参数sha256</span><br><span class="line">    */</span><br><span class="line">    char *pp, *ppend;</span><br><span class="line">    long l, i, W[64], T1, T2, A, B, C, D, E, F, G, H, H0, H1, H2, H3, H4, H5, H6, H7;</span><br><span class="line">    H0 = 0x6a09e667, H1 = 0xbb67ae85, H2 = 0x3c6ef372, H3 = 0xa54ff53a;</span><br><span class="line">    H4 = 0x510e527f, H5 = 0x9b05688c, H6 = 0x1f83d9ab, H7 = 0x5be0cd19;</span><br><span class="line">    long K[64] = &#123;</span><br><span class="line">        0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5,</span><br><span class="line">        0xd807aa98, 0x12835b01, 0x243185be, 0x550c7dc3, 0x72be5d74, 0x80deb1fe, 0x9bdc06a7, 0xc19bf174,</span><br><span class="line">        0xe49b69c1, 0xefbe4786, 0x0fc19dc6, 0x240ca1cc, 0x2de92c6f, 0x4a7484aa, 0x5cb0a9dc, 0x76f988da,</span><br><span class="line">        0x983e5152, 0xa831c66d, 0xb00327c8, 0xbf597fc7, 0xc6e00bf3, 0xd5a79147, 0x06ca6351, 0x14292967,</span><br><span class="line">        0x27b70a85, 0x2e1b2138, 0x4d2c6dfc, 0x53380d13, 0x650a7354, 0x766a0abb, 0x81c2c92e, 0x92722c85,</span><br><span class="line">        0xa2bfe8a1, 0xa81a664b, 0xc24b8b70, 0xc76c51a3, 0xd192e819, 0xd6990624, 0xf40e3585, 0x106aa070,</span><br><span class="line">        0x19a4c116, 0x1e376c08, 0x2748774c, 0x34b0bcb5, 0x391c0cb3, 0x4ed8aa4a, 0x5b9cca4f, 0x682e6ff3,</span><br><span class="line">        0x748f82ee, 0x78a5636f, 0x84c87814, 0x8cc70208, 0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2,</span><br><span class="line">    &#125;;</span><br><span class="line">    l = length + ((length % 64 &gt;= 56) ? (128 - length % 64) : (64 - length % 64));</span><br><span class="line">    if (!(pp = (char*)malloc((unsigned long)l))) return 0;</span><br><span class="line">    for (i = 0; i &lt; length; pp[i + 3 - 2 * (i % 4)] = str[i], i++);</span><br><span class="line">    for (pp[i + 3 - 2 * (i % 4)] = 128, i++; i &lt; l; pp[i + 3 - 2 * (i % 4)] = 0, i++);</span><br><span class="line">    *((long*)(pp + l - 4)) = length &lt;&lt; 3;</span><br><span class="line">    *((long*)(pp + l - 8)) = length &gt;&gt; 29;</span><br><span class="line">    for (ppend = pp + l; pp &lt; ppend; pp += 64)&#123;</span><br><span class="line">        for (i = 0; i &lt; 16; W[i] = ((long*)pp)[i], i++);</span><br><span class="line">        for (i = 16; i &lt; 64; W[i] = (SHA256_O1(W[i - 2]) + W[i - 7] + SHA256_O0(W[i - 15]) + W[i - 16]), i++);</span><br><span class="line">        A = H0, B = H1, C = H2, D = H3, E = H4, F = H5, G = H6, H = H7;</span><br><span class="line">        for (i = 0; i &lt; 64; i++)&#123;</span><br><span class="line">            T1 = H + SHA256_E1(E) + SHA256_Ch(E, F, G) + K[i] + W[i];</span><br><span class="line">            T2 = SHA256_E0(A) + SHA256_Maj(A, B, C);</span><br><span class="line">            H = G, G = F, F = E, E = D + T1, D = C, C = B, B = A, A = T1 + T2;</span><br><span class="line">        &#125;</span><br><span class="line">        H0 += A, H1 += B, H2 += C, H3 += D, H4 += E, H5 += F, H6 += G, H7 += H;</span><br><span class="line">    &#125;</span><br><span class="line">    free(pp - l);</span><br><span class="line">    sprintf(sha256, &quot;%08X%08X%08X%08X%08X%08X%08X%08X&quot;, H0, H1, H2, H3, H4, H5, H6, H7);</span><br><span class="line">    return sha256;</span><br><span class="line">&#125;</span><br><span class="line">extern char* FileSHA256(const char* file, char* sha256)&#123;</span><br><span class="line">    /*</span><br><span class="line">    计算文件SHA-256</span><br><span class="line">    参数说明：</span><br><span class="line">    file        文件路径字符串指针</span><br><span class="line">    sha256         用于保存SHA-256的字符串指针</span><br><span class="line">    返回值为参数sha256</span><br><span class="line">    */</span><br><span class="line">    FILE* fh;</span><br><span class="line">    char* addlp, T[64];</span><br><span class="line">    long addlsize, j, W[64], T1, T2, A, B, C, D, E, F, G, H, H0, H1, H2, H3, H4, H5, H6, H7;</span><br><span class="line">    long long length, i, cpys;</span><br><span class="line">    void *pp, *ppend;</span><br><span class="line">    H0 = 0x6a09e667, H1 = 0xbb67ae85, H2 = 0x3c6ef372, H3 = 0xa54ff53a;</span><br><span class="line">    H4 = 0x510e527f, H5 = 0x9b05688c, H6 = 0x1f83d9ab, H7 = 0x5be0cd19;</span><br><span class="line">    long K[64] = &#123;</span><br><span class="line">        0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5,</span><br><span class="line">        0xd807aa98, 0x12835b01, 0x243185be, 0x550c7dc3, 0x72be5d74, 0x80deb1fe, 0x9bdc06a7, 0xc19bf174,</span><br><span class="line">        0xe49b69c1, 0xefbe4786, 0x0fc19dc6, 0x240ca1cc, 0x2de92c6f, 0x4a7484aa, 0x5cb0a9dc, 0x76f988da,</span><br><span class="line">        0x983e5152, 0xa831c66d, 0xb00327c8, 0xbf597fc7, 0xc6e00bf3, 0xd5a79147, 0x06ca6351, 0x14292967,</span><br><span class="line">        0x27b70a85, 0x2e1b2138, 0x4d2c6dfc, 0x53380d13, 0x650a7354, 0x766a0abb, 0x81c2c92e, 0x92722c85,</span><br><span class="line">        0xa2bfe8a1, 0xa81a664b, 0xc24b8b70, 0xc76c51a3, 0xd192e819, 0xd6990624, 0xf40e3585, 0x106aa070,</span><br><span class="line">        0x19a4c116, 0x1e376c08, 0x2748774c, 0x34b0bcb5, 0x391c0cb3, 0x4ed8aa4a, 0x5b9cca4f, 0x682e6ff3,</span><br><span class="line">        0x748f82ee, 0x78a5636f, 0x84c87814, 0x8cc70208, 0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2,</span><br><span class="line">    &#125;;</span><br><span class="line">    fh = fopen(file, &quot;rb&quot;);</span><br><span class="line">    fseek(fh, 0, SEEK_END);</span><br><span class="line">    length = _ftelli64(fh);</span><br><span class="line">    addlsize = (56 - length % 64 &gt; 0) ? (64) : (128);</span><br><span class="line">    if (!(addlp = (char*)malloc(addlsize))) return 0;</span><br><span class="line">    cpys = ((length - (56 - length % 64)) &gt; 0) ? (length - length % 64) : (0);</span><br><span class="line">    j = (long)(length - cpys);</span><br><span class="line">    if (!(pp = (char*)malloc(j))) return 0;</span><br><span class="line">    fseek(fh, -j, SEEK_END);</span><br><span class="line">    fread(pp, 1, j, fh);</span><br><span class="line">    for (i = 0; i &lt; j; addlp[i + 3 - 2 * (i % 4)] = ((char*)pp)[i], i++);</span><br><span class="line">    free(pp);</span><br><span class="line">    for (addlp[i + 3 - 2 * (i % 4)] = 128, i++; i &lt; addlsize; addlp[i + 3 - 2 * (i % 4)] = 0, i++);</span><br><span class="line">    *((long*)(addlp + addlsize - 4)) = length &lt;&lt; 3;</span><br><span class="line">    *((long*)(addlp + addlsize - 8)) = length &gt;&gt; 29;</span><br><span class="line">    for (rewind(fh); 64 == fread(W, 1, 64, fh);)&#123;</span><br><span class="line">        for (i = 0; i &lt; 64; T[i + 3 - 2 * (i % 4)] = ((char*)W)[i], i++);</span><br><span class="line">        for (i = 0; i &lt; 16; W[i] = ((long*)T)[i], i++);</span><br><span class="line">        for (i = 16; i &lt; 64; W[i] = (SHA256_O1(W[i - 2]) + W[i - 7] + SHA256_O0(W[i - 15]) + W[i - 16]), i++);</span><br><span class="line">        A = H0, B = H1, C = H2, D = H3, E = H4, F = H5, G = H6, H = H7;</span><br><span class="line">        for (i = 0; i &lt; 64; i++)&#123;</span><br><span class="line">            T1 = H + SHA256_E1(E) + SHA256_Ch(E, F, G) + K[i] + W[i];</span><br><span class="line">            T2 = SHA256_E0(A) + SHA256_Maj(A, B, C);</span><br><span class="line">            H = G, G = F, F = E, E = D + T1, D = C, C = B, B = A, A = T1 + T2;</span><br><span class="line">        &#125;</span><br><span class="line">        H0 += A, H1 += B, H2 += C, H3 += D, H4 += E, H5 += F, H6 += G, H7 += H;</span><br><span class="line">    &#125;</span><br><span class="line">    for (pp = addlp, ppend = addlp + addlsize; pp &lt; ppend; pp = (long*)pp + 16)&#123;</span><br><span class="line">        for (i = 0; i &lt; 16; W[i] = ((long*)pp)[i], i++);</span><br><span class="line">        for (i = 16; i &lt; 64; W[i] = (SHA256_O1(W[i - 2]) + W[i - 7] + SHA256_O0(W[i - 15]) + W[i - 16]), i++);</span><br><span class="line">        A = H0, B = H1, C = H2, D = H3, E = H4, F = H5, G = H6, H = H7;</span><br><span class="line">        for (i = 0; i &lt; 64; i++)&#123;</span><br><span class="line">            T1 = H + SHA256_E1(E) + SHA256_Ch(E, F, G) + K[i] + W[i];</span><br><span class="line">            T2 = SHA256_E0(A) + SHA256_Maj(A, B, C);</span><br><span class="line">            H = G, G = F, F = E, E = D + T1, D = C, C = B, B = A, A = T1 + T2;</span><br><span class="line">        &#125;</span><br><span class="line">        H0 += A, H1 += B, H2 += C, H3 += D, H4 += E, H5 += F, H6 += G, H7 += H;</span><br><span class="line">    &#125;</span><br><span class="line">    free(addlp); fclose(fh);</span><br><span class="line">    sprintf(sha256, &quot;%08X%08X%08X%08X%08X%08X%08X%08X&quot;, H0, H1, H2, H3, H4, H5, H6, H7);</span><br><span class="line">    return sha256;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>原文地址:<a href="http://blog.csdn.net/c_duoduo/article/details/43889759" target="_blank" rel="noopener">http://blog.csdn.net/c_duoduo/article/details/43889759</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/14/(转)!注意_PreTranslateMessage弹出框出错/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lydit">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lydit的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/14/(转)!注意_PreTranslateMessage弹出框出错/" itemprop="url">(转)!注意:PreTranslateMessage弹出框出错</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-14T15:39:20+08:00">
+                2017-12-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>dlg.DoModal()截住了界面消息,所以返回时原来的pMsg的内容已经更改了,消息,窗口句柄都不在是if以前的值了,而且窗口句柄应该是对话框里的子窗口的句柄,所以调用CFrameWnd::PreTranslateMessage(pMsg);<br>时pMsg的窗口句柄是个无效值(窗口已销毁)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">BOOL CViewUP::PreTranslateMessage(MSG* pMsg)</span><br><span class="line">&#123;</span><br><span class="line">    if (pMsg-&gt;message == WM_KEYDOWN)</span><br><span class="line">    &#123;</span><br><span class="line">        if(pMsg-&gt;wParam ==&apos;M&apos; || pMsg-&gt;wParam == &apos;m&apos;)//暂时为按“M”键退出系统</span><br><span class="line">        &#123;</span><br><span class="line">            AfxGetApp()-&gt;m_pMainWnd-&gt;SendMessage(WM_CLOSE,0L,0L);</span><br><span class="line">            return TRUE;</span><br><span class="line">        &#125;</span><br><span class="line">        else if(pMsg-&gt;wParam==&apos;Z&apos; || pMsg-&gt;wParam == &apos;z&apos;)//暂时为按“Z”键启动就地系统</span><br><span class="line">        &#123;</span><br><span class="line">            //激活上一个窗口还是退出??因须要而定</span><br><span class="line">            CWnd* pWnd = FindWindow(NULL,_T(&quot;就地站_JD&quot;));</span><br><span class="line">            if (pWnd)</span><br><span class="line">            &#123;</span><br><span class="line">                pWnd-&gt;ShowWindow(SW_SHOWNA );//SW_SHOWMAXIMIZED);</span><br><span class="line">                pWnd-&gt;SetForegroundWindow();</span><br><span class="line">                return TRUE;</span><br><span class="line">            &#125;</span><br><span class="line">            // CAONumValueDlg aoDlg;</span><br><span class="line">            // aoDlg. DoModal();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return CView::PreTranslateMessage(pMsg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>注意事项</p>
+<p>模态窗口极大地简化了一些需要和用户交互的操作，好处显而易见。但这里还是要指出一些需要注意的地方，否则使用的时候很可能会出问题。</p>
+<p>影响PreTranslateMessage机制</p>
+<p>在使用MFC，WTL等进行开发的时候，经常用到PreTranslateMessage机制，这个机制可以让我们在消息被派发之前先做一些事情。很多人以为PreTranslateMessage是Windows本身支持的，其实不然。PreTranslateMessage是MFC和WTL自己引入的一个概念，完全是和Windows无关的。在MFC和WTL的消息循环中，这两个库的设计者在消息分发之前，人为的加了一些代码，使得整个架构支持这一套机制。</p>
+<p>正是如此，如果在正常的流程中弹出了模态窗口，就会使正常的PreTranslateMessage机制失效。因为模态窗口中已经包含了一个消息循环，接管了线程中缺省的消息循环。而这个消息循环是在DialogBox这个API函数中执行的，显然不可能再有PreTranalateMessage机制了。</p>
+<p>为了解决这一问题，只有让模态窗口也使用和UI线程相同的消息循环，MFC正是这么做的。在MFC中，对话框类的DoModal函数，并不是调用DialogBox函数，而是直接使用CreateWindows创建一个非模态窗口，在窗口创建成功之后再调用MFC自己的消息循环，这样就可以让PreTranslateMessage继续生效。同时在窗口创建出来之后，必须再做一些别的操作，使这个模态窗口的父窗口失效（一般直接把窗口Disable掉）。同时消息循环里有合适的退出条件，并有恢复现场的一些操作，具体可以查看MFC的DoModal函数。</p>
+<p>WTL到目前为止，貌似暂时还没有一个合适的方案来解决这个问题。事实上WTL的PreTranslateMessage机制实现的其实是有点问题的，或许以后会在这方面做一定的增强。</p>
+<p>可能导致崩溃</p>
+<p>这是一个严重问题，在条件合适的情况下，这个崩溃是必然的。</p>
+<p>因为模态窗口弹出来之后，模态窗口后面的代码在窗口关闭之前将不会得到执行。然而此时整个窗口是在正常运行的，对于一些极端的情况，是极有可能造成崩溃的。下面看一个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">void CTestDlg::OnOK()</span><br><span class="line">&#123;</span><br><span class="line">    CInputDialog dlg;</span><br><span class="line">    If(dlg.DoModal() == IDOK)</span><br><span class="line">    &#123;</span><br><span class="line">        m_nValue = dlg.GetValue();</span><br><span class="line">        UpdateData(FALSE);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这是一段典型的MFC代码，在绝大多数情况下，不会有任何问题。但是由于模态窗口弹出的时候，只是父窗口不能操作，但别的窗口完全还能正常运行，这时候就非常有可能由于某种原因，CTestDlg类已经销毁了，而CInputDialog却不知道，还在继续执行，结果到了IDOK之后，对CTestDialog类的成员变量m_nValue赋值，就会出现崩溃了。</p>
+<p>这个问题，如果在多线程的情况下，将会更加严重。因为在多线程的情况下，将会有更加多的不可预料的因素，所以使用的时候要更加小心。</p>
+<p>改成这样就OK了,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">if (pMsg-&gt; message == WM_CHAR)</span><br><span class="line">&#123;</span><br><span class="line">    MSG msg = *pMsg;//后来发现这样还是有点问题,模态对话框回车后，鼠标不见了</span><br><span class="line">    CMyDlg dlg;</span><br><span class="line">    dlg.DoModal();</span><br><span class="line">    *pMsg = msg; //后来发现这样还是有点问题,模态对话框回车后，鼠标不见了</span><br><span class="line">	</span><br><span class="line">    return   TRUE;//最终方法还是在这里直接返回吧，破坏消息循环总是不好的。</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>我估计是MFC保存了一个当前消息的结构来跟踪消息路由,dlg.DoModal();时这个结构的值都更新好多遍了</p>
+<p>/////注意///下面是自己实践的代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">BOOL CDoctorAdd::PreTranslateMessage(MSG* pMsg)</span><br><span class="line">&#123;</span><br><span class="line">    if(pMsg-&gt;hwnd==((CButton*)GetDlgItem(IDOK))-&gt;m_hWnd &amp;&amp; pMsg-&gt;message==WM_MOUSEMOVE)</span><br><span class="line">    UpdateData();</span><br><span class="line">    if(m_number.IsEmpty())</span><br><span class="line">    &#123;</span><br><span class="line">        CMyDlg dlg;</span><br><span class="line">        dlg.DoModal();</span><br><span class="line">        //return CDialog::PreTranslateMessage(pMsg);</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>//呵呵这样就不报错啦</p>
+<p>转自:<a href="http://blog.sina.com.cn/s/blog_9e2e84050101fnjk.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_9e2e84050101fnjk.html</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/14/(转载)对于代码审查的认识和理解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lydit">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lydit的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/14/(转载)对于代码审查的认识和理解/" itemprop="url">(转载)对于代码审查的认识和理解</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-14T15:23:40+08:00">
+                2017-12-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>代码审查应该成为任何重要的软件开发工作中一个基本制度。并不单指产品程序――而是所有东西。而且代码审查也不需要花费很多的时间和人力，但它却能发挥巨大的效果。</p>
+<p>从代码审查里能得到什么？</p>
+<p>对于代码审查的认识，在代码提交前，用其他人的眼睛检查一遍，防止bug混入。这是最常见的理解，也是对代码审查的好处的最广泛的认识。</p>
+<p>但是，在我看来，这并是它最不重要的。人们确实可以在代码审查中找到一些bug。可是，这些在代码审查中能发现的绝大部分bug，很显然，都是微不足道的bug，程序的作者花几分钟的时间就能发现它们。真正需要花时间去发现的bug不是在代码审查里能找到的。</p>
+<p>代码审查的最大的好处在于,如果你是程序员，而且知道将会有其他同事来检查你的代码，你编程态度就完全不一样了。你写出的代码将更加整洁，有更好的注释，更好的程序结构。因为你很在意别人对你的程序的看法。没有代码审查，你可能会认为，你写的程序基本不会有人看到，除非有人用到了，它不会给你带来同等的紧迫感。除此之外，还有一个非常重要的好处。代码审查能传播知识，培养分享的氛围。在很多的开发团队里，经常每一个人负责一个核心模块，每个人都只关注他自己的那个模块。除非是同事的模块影响了自己的程序，他们从不相互交流。这种情况的后果是，每个模块只有一个人熟悉里面的代码。如果这个人休假或辞职了，其他人则束手无策。通过代码审查，至少会有两个人熟悉这些程序。审查者虽然并不能像程序的作者一样对程序和业务十分了解，但他会熟悉程序的设计和架构还有业务的架构，这个极其重要的。</p>
+<p>刚开始，大家在代码审查时经常会犯一些错误，导致很多麻烦，特别是一些缺乏经验的审查者，他们在代码审查的时候会给了程序开发者的很不好的感觉，最终导致程序员抵触代码审查制度。</p>
+<p>针对所有人的审查<br>　　　　* 首先必须承认：审查者都是根据自己的编程习惯来评判别人的代码。所以很多编程上的主张都是一种个人观点。所以应该讨论它们的利与弊，提出你倾向的观点，迅速的在团队达成一致。</p>
+<ul>
+<li><p>对与审查者和被审查者，大家觉得有压力，感觉非要说点什么，非得找出点什么问题出来才好，别人都提出了点什么，自己多少也得说点吧。（完全不需要。只说一句“这段程序写的真不错。”就可以了）</p>
+</li>
+<li><p>尽量使用提问或是建议，而不是命令。(“把这个变量命名成:user_id,你觉得怎样？”)</p>
+</li>
+<li><p>请求说明。(“我不明白。你能解释一下吗？”)</p>
+</li>
+<li><p>避免代码的归属之争。(“我的”，“不是我的”，“你的”)</p>
+</li>
+<li><p>不要讽刺,嘲笑别人的代码,避免使用一些会被认为或可能会被认为是有关人身特征的词语。(“笨蛋”，“愚蠢”，“傻逼”，“二”)要把所有人都看作是有魅力的、聪明的、善意的。</p>
+</li>
+<li><p>要明确。要记着并不是每个人都能理解你的意图。</p>
+</li>
+<li><p>要谦虚。(“我不能确定——我们来分析一下。”)</p>
+</li>
+<li><p>不要用“总是”，“从不”，“永远”，“毫无…”这样的修辞语。</p>
+</li>
+<li><p>如果对于某个代码，有太多的我不理解或大家都有不同的看法，可以组织一个讨论会，或是技术分享，然后把你们的交流形成共识，总结成文档</p>
+</li>
+<li><p>代码审查，不能时间太短，这样没有太多的效果，但是时间也不能太长。毕竟大家还有其他的工作要做。</p>
+</li>
+</ul>
+<p>让别人审查你的代码</p>
+<ul>
+<li><p>首先要达成共识，理解审查是对事不对人。审查的是你的代码，而不是你。</p>
+</li>
+<li><p>对审查者的建议表示肯定和感激。(“对，你说的没错。”,“谢谢提醒。我会把它改正。”)</p>
+</li>
+<li><p>解释为什么代码写成这样，可以说明这段代码的业务逻辑。</p>
+</li>
+<li><p>整理所作的改动，不必当场改掉，复杂的程序，也可以在以后的迭代中重构它们。</p>
+</li>
+<li><p>努力站在审查者的立场上理解,同样也要努力理解作者的立场。。</p>
+</li>
+<li><p>针对你感觉非常好的地方以及不是很好的地方与开发者交流。</p>
+</li>
+<li><p>找出既能解决问题又能简化代码的方法，让代码变得简单。</p>
+</li>
+<li><p>提出你的实现方案，但要表现出作者也在考虑这种方案。(“你觉得这里用一个自定义校验如何？”)</p>
+</li>
+<li><p>程序风格样式和注释，同样也是代码审查的范围，而不仅仅是程序。</p>
+</li>
+</ul>
+<p>原文地址:<a href="http://www.cnblogs.com/zhangweizhong/p/4389884.html" target="_blank" rel="noopener">http://www.cnblogs.com/zhangweizhong/p/4389884.html</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/14/(原创)vs2013编程64位程序连接access数据库/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lydit">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lydit的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/14/(原创)vs2013编程64位程序连接access数据库/" itemprop="url">(原创)vs2013编程64位程序连接access数据库</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-14T15:11:31+08:00">
+                2017-12-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>之前一直是vc6上开车，今天因为测试需要，转到了vs2013，之前就写写底层的，还没搞过数据库的，发现网上资料还是很杂乱的，故自己整理了一份出来<br>具体的类已经上传到百度网盘了，所以这边就简单点了，写下调用的代码就好了<br>初始化数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Init_DataBase();</span><br></pre></td></tr></table></figure>
+<p>调用查询显示数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">DBTable hDBTable;</span><br><span class="line">DWORD dwCount = DataInertface_GetCount(&amp;hDBTable);</span><br><span class="line">int nLogID = 0;</span><br><span class="line">for (int i = 0; i &lt; dwCount; i++)</span><br><span class="line">&#123;</span><br><span class="line">    nLogID = 0;</span><br><span class="line">    if (DataInertface_Read(&amp;hDBTable,&amp;nLogID))</span><br><span class="line">    &#123;</span><br><span class="line">        DebugOut(&quot;[Ht64Bit]nLogID=%d&quot;,nLogID);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">hDBTable.Close();</span><br></pre></td></tr></table></figure>
+<p>补充:<br>之前碰到个问题，就是在编译机器运行正常，但是到目标机器的话，就会出错，最后是安装了AccessDatabaseEngine_X64.exe之后才解决的</p>
+<p>百度盘地址<br>链接: <a href="https://pan.baidu.com/s/1o7CtHBO" target="_blank" rel="noopener">https://pan.baidu.com/s/1o7CtHBO</a> 密码: k4n4</p>
+<p>原创文章，转载请标原文地址</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="lydit" />
+            
+              <p class="site-author-name" itemprop="name">lydit</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lydit</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
