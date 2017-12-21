@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="这几天想在一个开源的代码上进行修改，以期研发出一个产品出来。       程序原来是单线程网络程序，需要修改为多线程，修改之后，总是出问题，辅助线程中的recv函数总是运行一阵子之后收到长度为-1的数据报，导致程序运行不正确甚至崩溃。        由于是多线程，只好打日志进行调试，发现一个奇怪的问题。在A线程与B线程中，均使用了socket这个函数来产生socket，竟然会产生两个相同返回值的s">
+<meta name="description" content="解决步骤: 先备份/etc/ssh/sshd_config,备份命令为 cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak 1.su                                    (以root用户登录) 2.vi /etc/ssh/sshd_config      (编辑配置文件) 3.输入 / ,查找GSSAPIAuthent">
 <meta property="og:type" content="article">
-<meta property="og:title" content="(转载) socket：10038错误{winSock的一个bug：当closesocket多次错误使用时会导致问题}">
-<meta property="og:url" content="http://yoursite.com/2017/12/15/(转载) socket 10038错误{winSock的一个bug 当closesocket多次错误使用时会导致问题}/index.html">
+<meta property="og:title" content="(原创)解决ssh登录linux速度慢的问题(以centos7为例)">
+<meta property="og:url" content="http://yoursite.com/2017/12/15/(原创)解决ssh登录linux速度慢的问题(以centos7为例)/index.html">
 <meta property="og:site_name" content="lydit的博客">
-<meta property="og:description" content="这几天想在一个开源的代码上进行修改，以期研发出一个产品出来。       程序原来是单线程网络程序，需要修改为多线程，修改之后，总是出问题，辅助线程中的recv函数总是运行一阵子之后收到长度为-1的数据报，导致程序运行不正确甚至崩溃。        由于是多线程，只好打日志进行调试，发现一个奇怪的问题。在A线程与B线程中，均使用了socket这个函数来产生socket，竟然会产生两个相同返回值的s">
+<meta property="og:description" content="解决步骤: 先备份/etc/ssh/sshd_config,备份命令为 cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak 1.su                                    (以root用户登录) 2.vi /etc/ssh/sshd_config      (编辑配置文件) 3.输入 / ,查找GSSAPIAuthent">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-15T09:54:21.676Z">
+<meta property="og:updated_time" content="2017-12-21T05:57:09.325Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="(转载) socket：10038错误{winSock的一个bug：当closesocket多次错误使用时会导致问题}">
-<meta name="twitter:description" content="这几天想在一个开源的代码上进行修改，以期研发出一个产品出来。       程序原来是单线程网络程序，需要修改为多线程，修改之后，总是出问题，辅助线程中的recv函数总是运行一阵子之后收到长度为-1的数据报，导致程序运行不正确甚至崩溃。        由于是多线程，只好打日志进行调试，发现一个奇怪的问题。在A线程与B线程中，均使用了socket这个函数来产生socket，竟然会产生两个相同返回值的s">
+<meta name="twitter:title" content="(原创)解决ssh登录linux速度慢的问题(以centos7为例)">
+<meta name="twitter:description" content="解决步骤: 先备份/etc/ssh/sshd_config,备份命令为 cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak 1.su                                    (以root用户登录) 2.vi /etc/ssh/sshd_config      (编辑配置文件) 3.输入 / ,查找GSSAPIAuthent">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/12/15/(转载) socket 10038错误{winSock的一个bug 当closesocket多次错误使用时会导致问题}/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/15/(原创)解决ssh登录linux速度慢的问题(以centos7为例)/"/>
 
 
 
 
 
-  <title>(转载) socket：10038错误{winSock的一个bug：当closesocket多次错误使用时会导致问题} | lydit的博客</title>
+  <title>(原创)解决ssh登录linux速度慢的问题(以centos7为例) | lydit的博客</title>
   
 
 
@@ -286,7 +286,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/15/(转载) socket 10038错误{winSock的一个bug 当closesocket多次错误使用时会导致问题}/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/15/(原创)解决ssh登录linux速度慢的问题(以centos7为例)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lydit">
@@ -303,7 +303,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">(转载) socket：10038错误{winSock的一个bug：当closesocket多次错误使用时会导致问题}</h1>
+          <h1 class="post-title" itemprop="name headline">(原创)解决ssh登录linux速度慢的问题(以centos7为例)</h1>
         
 
         <div class="post-meta">
@@ -315,7 +315,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-15T17:52:24+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-15T16:50:52+08:00">
                 2017-12-15
               </time>
             
@@ -352,7 +352,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  679字
+                  97字
                 </span>
               
 
@@ -368,7 +368,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2分钟
+                  1分钟
                 </span>
               
             </div>
@@ -389,20 +389,15 @@
       
 
       
-        <p>这几天想在一个开源的代码上进行修改，以期研发出一个产品出来。<br>       程序原来是单线程网络程序，需要修改为多线程，修改之后，总是出问题，辅助线程中的recv函数总是运行一阵子之后收到长度为-1的数据报，导致程序运行不正确甚至崩溃。<br>        由于是多线程，只好打日志进行调试，发现一个奇怪的问题。在A线程与B线程中，均使用了socket这个函数来产生socket，竟然会产生两个相同返回值的socket！也就是说，A线程与B线程能同时获得socket值为360的socket，这样当A正在使用360进行数据接收时，B去连接一把，A自然就出错了。</p>
-<pre><code> 这个问题实在是诡异，因为socket又不是COM组件，是可以直接在线程中共享的，究竟是出了什么问题呢，MSDN和网络上没有见到任何与此问题相关的内容。活脱脱地就是API出错了！按道理这是不可能的事情啊。
-  实在没辙了，只好review代码，发现程序中有很多这样的语句：
- if( mSocket != INVALID_SOCKET )
- {
-         closesocket( mSocket );
-  }
- 这句有什么问题没有？呵呵看起来没什么问题，但是，不容置疑的是，肯定会导致一个socket被关闭多次。本着死马当着活马医的原则，进行修改，每次closesocket之后，将socket的值置为INVALID_SOCKET，运行程序，问题解决。
-
-  这个问题也太ft了，windows竟然连这个容错都没有做，按道理这是很好做的，socket实际上只是一个索引值，系统内核在关闭时如果发现已经关闭就不要做操作就可以了。现在看起来，内核里面貌似是一个socket缓冲池，程序在使用的时候使用计数来管理生命周期。这样当一个socket被关闭多次后，再创建改socket之后，系统可能会认为该socket是关闭的（因为计数小于等于0）。所以下次分配的时候，会将该索引重新分配出去。
-
-该问题在vista home版上出现，其他平台又没有问题不得而知，由此可以看出成对编码的好处以及面向对象封装的好处。
-</code></pre><p>转自:<a href="http://blog.csdn.net/chen495810242/article/details/42029825" target="_blank" rel="noopener">http://blog.csdn.net/chen495810242/article/details/42029825</a></p>
-<p>个人注释:在win7上的测试结果,当一个工程调用多个dll的时候，不同的dll之间使用socket这个函数来产生socket，返回值是可能一样的，就会发生连接无缘无故被断开的现象，查了两三天的说</p>
+        <p>解决步骤:</p>
+<p>先备份/etc/ssh/sshd_config,备份命令为</p>
+<p>cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak</p>
+<p>1.su                                    (以root用户登录)</p>
+<p>2.vi /etc/ssh/sshd_config      (编辑配置文件)</p>
+<p>3.输入 / ,查找GSSAPIAuthentication 赋值为no</p>
+<p>4.输入 /，查找UseDNS,赋值为 no(该项默认不启用的，要把前面的#删除掉)</p>
+<p>5.最后输入!wq保存文件并退出</p>
+<p>6.重启systemctl restart sshd</p>
 
       
     </div>
@@ -456,8 +451,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/15/解决ssh登录linux速度慢的问题(以centos7为例)/" rel="next" title="解决ssh登录linux速度慢的问题(以centos7为例)">
-                <i class="fa fa-chevron-left"></i> 解决ssh登录linux速度慢的问题(以centos7为例)
+              <a href="/2017/12/15/(原创)随机串的产生,可以用于盐值/" rel="next" title="(原创)随机串的产生,可以用于盐值">
+                <i class="fa fa-chevron-left"></i> (原创)随机串的产生,可以用于盐值
               </a>
             
           </div>
@@ -466,8 +461,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/12/18/(转载)error LNK2005 ...already defined in MSVCRTD/" rel="prev" title="(转载)error LNK2005 ...already defined in MSVCRTD">
-                (转载)error LNK2005 ...already defined in MSVCRTD <i class="fa fa-chevron-right"></i>
+              <a href="/2017/12/15/(转载)socket 10038错误{winSock的一个bug 当closesocket多次错误使用时会导致问题}/" rel="prev" title="(转载)socket：10038错误{winSock的一个bug：当closesocket多次错误使用时会导致问题}">
+                (转载)socket：10038错误{winSock的一个bug：当closesocket多次错误使用时会导致问题} <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
