@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[hexo next主题中使用文章计数计时功能]]></title>
-    <url>%2F2017%2F12%2F21%2Fnext%E4%B8%BB%E9%A2%98%E4%B8%AD%E4%BD%BF%E7%94%A8%E6%96%87%E7%AB%A0%E8%AE%A1%E6%95%B0%E8%AE%A1%E6%97%B6%E5%8A%9F%E8%83%BD%2F</url>
+    <title></title>
+    <url>%2F2017%2F12%2F21%2F(%E5%8E%9F%E5%88%9B)next%E4%B8%BB%E9%A2%98%E4%B8%AD%E4%BD%BF%E7%94%A8%E6%96%87%E7%AB%A0%E8%AE%A1%E6%95%B0%E8%AE%A1%E6%97%B6%E5%8A%9F%E8%83%BD%2F</url>
     <content type="text"><![CDATA[一定要先安装hexo-wordcount,不然就算配置了next主题,网页中显示的也是空的。安装方法:在hexo目录上右键选择”Git Bash Here”,执行1npm install hexo-wordcount --save 在next目录下,找到_config.yml,找到post_wordcount,修改如下12345678# Post wordcount display settings# Dependencies: https://github.com/willin/hexo-wordcountpost_wordcount: item_text: true wordcount: true min2read: true totalcount: true separated_meta: true 到这边的话，已经初步实现了文章计数计时功能,剩下的就是汉化了,在主题目录下,打开languages\zh-Hans.yml,找打totalcount,修改成总字数或则你任意喜欢的文字,这边是统计博客所有文章字符数的再打开layout_macro\post.swig,找到{ __(‘post.wordcount’) },修改如下123&lt;span title=&quot;&#123;&#123; __(&apos;post.wordcount&apos;) &#125;&#125;&quot;&gt; &#123;&#123; wordcount(post.content) &#125;&#125;字 &lt;/span&gt; 找到{ __(‘post.min2read’) },修改如下123&lt;span title=&quot;&#123;&#123; __(&apos;post.min2read&apos;) &#125;&#125;&quot;&gt; &#123;&#123; min2read(post.content) &#125;&#125;分钟 &lt;/span&gt; 大功告成!!!]]></content>
   </entry>
   <entry>
