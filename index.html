@@ -283,6 +283,179 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/29/sem_wait实现毫秒级延时/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lydit">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lydit的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/29/sem_wait实现毫秒级延时/" itemprop="url">sem_wait实现毫秒级延时</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-29T14:30:14+08:00">
+                2017-12-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/c/" itemprop="url" rel="index">
+                    <span itemprop="name">c</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  99字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">static int gettimeofday(struct timeval *tp, void *t)</span><br><span class="line">&#123;</span><br><span class="line">    timeb tv;</span><br><span class="line">    </span><br><span class="line">    ftime(&amp;tv);</span><br><span class="line">    tp-&gt;tv_sec = tv.time;</span><br><span class="line">    tp-&gt;tv_usec = tv.millitm*1000;</span><br><span class="line">    </span><br><span class="line">    return 1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int sem_timedwait_ms(sem_t *sem, int milliseconds)</span><br><span class="line">&#123;</span><br><span class="line">    struct timespec abstime;</span><br><span class="line">    struct timeval now;</span><br><span class="line">    uint64_t tv_nsec;</span><br><span class="line">    </span><br><span class="line">    gettimeofday(&amp;now, NULL);</span><br><span class="line">    </span><br><span class="line">    tv_nsec = now.tv_usec * 1000 + (milliseconds % 1000) * 1000000;</span><br><span class="line">    abstime.tv_sec = now.tv_sec + milliseconds / 1000;</span><br><span class="line">    if(tv_nsec&gt;=1000000000)</span><br><span class="line">    &#123;</span><br><span class="line">        tv_nsec -= 1000000000;</span><br><span class="line">        abstime.tv_sec += 1;</span><br><span class="line">    &#125;</span><br><span class="line">    abstime.tv_nsec = tv_nsec;</span><br><span class="line">    </span><br><span class="line">    return sem_timedwait(sem, &amp;abstime);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/21/(原创)next主题中使用文章计数计时功能/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -324,6 +497,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工具/" itemprop="url" rel="index">
+                    <span itemprop="name">工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -479,6 +674,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/c/" itemprop="url" rel="index">
+                    <span itemprop="name">c++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -655,6 +872,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/c/" itemprop="url" rel="index">
+                    <span itemprop="name">c</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -819,6 +1058,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工具/" itemprop="url" rel="index">
+                    <span itemprop="name">工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -978,6 +1239,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/c/" itemprop="url" rel="index">
+                    <span itemprop="name">c</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -1128,6 +1411,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/c/" itemprop="url" rel="index">
+                    <span itemprop="name">c</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -1285,6 +1590,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/c/" itemprop="url" rel="index">
+                    <span itemprop="name">c</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -1346,8 +1673,8 @@
         
           
             <p>原创内容，转载请标明原文地址</p>
-<p>我们先来看下下面的代码<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取文件大小</span></span><br><span class="line"><span class="function">DWORD <span class="title">Get_File_Size</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* m_FilePath)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">long</span> size;</span><br><span class="line">    <span class="keyword">if</span> (_access(m_FilePath, <span class="number">0</span>) == <span class="number">-1</span>)<span class="comment">//文件不存在 2013.09.24</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    FILE* fp = fopen( m_FilePath, <span class="string">"rb"</span> );</span><br><span class="line">    <span class="keyword">if</span>(fp==<span class="literal">NULL</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    fseek( fp, SEEK_SET, SEEK_END );</span><br><span class="line">    size=ftell(fp);</span><br><span class="line">    fclose(fp);</span><br><span class="line">    <span class="keyword">return</span> size;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">BYTE bReadBuf[<span class="number">1024</span>*<span class="number">100</span>];</span><br><span class="line">    DWORD dwFileSize = Get_File_Size(<span class="string">"C:\\pub.txt"</span>);</span><br><span class="line">    AfxMessageBox(IntToStr(dwFileSize));</span><br><span class="line">    FILE *fp = fopen(<span class="string">"C:\\pub.txt"</span>,<span class="string">"rb"</span>);</span><br><span class="line">    <span class="keyword">if</span> (fp != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        fread(bReadBuf,dwFileSize,<span class="number">1</span>,fp);</span><br><span class="line">        <span class="keyword">if</span> (!feof(fp))</span><br><span class="line">            AfxMessageBox(<span class="string">"1"</span>);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            AfxMessageBox(<span class="string">"2"</span>);</span><br><span class="line">        <span class="keyword">int</span> nRe = fread(bReadBuf,<span class="number">1</span>,<span class="number">1</span>,fp);</span><br><span class="line">        AfxMessageBox(IntToStr(nRe));</span><br><span class="line">        <span class="keyword">if</span> (!feof(fp))</span><br><span class="line">            AfxMessageBox(<span class="string">"1"</span>);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            AfxMessageBox(<span class="string">"2"</span>);</span><br><span class="line">        fclose(fp);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>我们先来看下下面的代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//获取文件大小</span><br><span class="line">DWORD Get_File_Size(const char* m_FilePath)</span><br><span class="line">&#123;</span><br><span class="line">    unsigned long size;</span><br><span class="line">    if (_access(m_FilePath, 0) == -1)//文件不存在 2013.09.24</span><br><span class="line">        return 0;</span><br><span class="line">    </span><br><span class="line">    FILE* fp = fopen( m_FilePath, &quot;rb&quot; );</span><br><span class="line">    if(fp==NULL)</span><br><span class="line">        return 0;</span><br><span class="line">    fseek( fp, SEEK_SET, SEEK_END );</span><br><span class="line">    size=ftell(fp);</span><br><span class="line">    fclose(fp);</span><br><span class="line">    return size;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">BYTE bReadBuf[1024*100];</span><br><span class="line">    DWORD dwFileSize = Get_File_Size(&quot;C:\\pub.txt&quot;);</span><br><span class="line">    AfxMessageBox(IntToStr(dwFileSize));</span><br><span class="line">    FILE *fp = fopen(&quot;C:\\pub.txt&quot;,&quot;rb&quot;);</span><br><span class="line">    if (fp != NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        fread(bReadBuf,dwFileSize,1,fp);</span><br><span class="line">        if (!feof(fp))</span><br><span class="line">            AfxMessageBox(&quot;1&quot;);</span><br><span class="line">        else</span><br><span class="line">            AfxMessageBox(&quot;2&quot;);</span><br><span class="line">        int nRe = fread(bReadBuf,1,1,fp);</span><br><span class="line">        AfxMessageBox(IntToStr(nRe));</span><br><span class="line">        if (!feof(fp))</span><br><span class="line">            AfxMessageBox(&quot;1&quot;);</span><br><span class="line">        else</span><br><span class="line">            AfxMessageBox(&quot;2&quot;);</span><br><span class="line">        fclose(fp);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <p>其中pub.txt的文件属性为<br><img src="http://upload-images.jianshu.io/upload_images/7310251-7b3ff96c99dad0a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p>弹出的内容分别为64，1，0，2</p>
 <p>获取出来的文件大小是正确的，但是如果按照这个大小去读取的话，是会发现，feof返回的是true，但是继续去读取的话，又读取不出来数据，但是这个时候再次判断feof则返回false了，</p>
@@ -1442,6 +1769,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/c/" itemprop="url" rel="index">
+                    <span itemprop="name">c</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -1599,6 +1948,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/c/" itemprop="url" rel="index">
+                    <span itemprop="name">c++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -1712,207 +2083,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/14/(转载)对于代码审查的认识和理解/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="lydit">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lydit的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/14/(转载)对于代码审查的认识和理解/" itemprop="url">(转载)对于代码审查的认识和理解</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-14T15:23:40+08:00">
-                2017-12-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1,377字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  5分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>代码审查应该成为任何重要的软件开发工作中一个基本制度。并不单指产品程序――而是所有东西。而且代码审查也不需要花费很多的时间和人力，但它却能发挥巨大的效果。</p>
-<p>从代码审查里能得到什么？</p>
-<p>对于代码审查的认识，在代码提交前，用其他人的眼睛检查一遍，防止bug混入。这是最常见的理解，也是对代码审查的好处的最广泛的认识。</p>
-<p>但是，在我看来，这并是它最不重要的。人们确实可以在代码审查中找到一些bug。可是，这些在代码审查中能发现的绝大部分bug，很显然，都是微不足道的bug，程序的作者花几分钟的时间就能发现它们。真正需要花时间去发现的bug不是在代码审查里能找到的。</p>
-<p>代码审查的最大的好处在于,如果你是程序员，而且知道将会有其他同事来检查你的代码，你编程态度就完全不一样了。你写出的代码将更加整洁，有更好的注释，更好的程序结构。因为你很在意别人对你的程序的看法。没有代码审查，你可能会认为，你写的程序基本不会有人看到，除非有人用到了，它不会给你带来同等的紧迫感。除此之外，还有一个非常重要的好处。代码审查能传播知识，培养分享的氛围。在很多的开发团队里，经常每一个人负责一个核心模块，每个人都只关注他自己的那个模块。除非是同事的模块影响了自己的程序，他们从不相互交流。这种情况的后果是，每个模块只有一个人熟悉里面的代码。如果这个人休假或辞职了，其他人则束手无策。通过代码审查，至少会有两个人熟悉这些程序。审查者虽然并不能像程序的作者一样对程序和业务十分了解，但他会熟悉程序的设计和架构还有业务的架构，这个极其重要的。</p>
-<p>刚开始，大家在代码审查时经常会犯一些错误，导致很多麻烦，特别是一些缺乏经验的审查者，他们在代码审查的时候会给了程序开发者的很不好的感觉，最终导致程序员抵触代码审查制度。</p>
-<p>针对所有人的审查<br>　　　　* 首先必须承认：审查者都是根据自己的编程习惯来评判别人的代码。所以很多编程上的主张都是一种个人观点。所以应该讨论它们的利与弊，提出你倾向的观点，迅速的在团队达成一致。</p>
-<ul>
-<li><p>对与审查者和被审查者，大家觉得有压力，感觉非要说点什么，非得找出点什么问题出来才好，别人都提出了点什么，自己多少也得说点吧。（完全不需要。只说一句“这段程序写的真不错。”就可以了）</p>
-</li>
-<li><p>尽量使用提问或是建议，而不是命令。(“把这个变量命名成:user_id,你觉得怎样？”)</p>
-</li>
-<li><p>请求说明。(“我不明白。你能解释一下吗？”)</p>
-</li>
-<li><p>避免代码的归属之争。(“我的”，“不是我的”，“你的”)</p>
-</li>
-<li><p>不要讽刺,嘲笑别人的代码,避免使用一些会被认为或可能会被认为是有关人身特征的词语。(“笨蛋”，“愚蠢”，“傻逼”，“二”)要把所有人都看作是有魅力的、聪明的、善意的。</p>
-</li>
-<li><p>要明确。要记着并不是每个人都能理解你的意图。</p>
-</li>
-<li><p>要谦虚。(“我不能确定——我们来分析一下。”)</p>
-</li>
-<li><p>不要用“总是”，“从不”，“永远”，“毫无…”这样的修辞语。</p>
-</li>
-<li><p>如果对于某个代码，有太多的我不理解或大家都有不同的看法，可以组织一个讨论会，或是技术分享，然后把你们的交流形成共识，总结成文档</p>
-</li>
-<li><p>代码审查，不能时间太短，这样没有太多的效果，但是时间也不能太长。毕竟大家还有其他的工作要做。</p>
-</li>
-</ul>
-<p>让别人审查你的代码</p>
-<ul>
-<li><p>首先要达成共识，理解审查是对事不对人。审查的是你的代码，而不是你。</p>
-</li>
-<li><p>对审查者的建议表示肯定和感激。(“对，你说的没错。”,“谢谢提醒。我会把它改正。”)</p>
-</li>
-<li><p>解释为什么代码写成这样，可以说明这段代码的业务逻辑。</p>
-</li>
-<li><p>整理所作的改动，不必当场改掉，复杂的程序，也可以在以后的迭代中重构它们。</p>
-</li>
-<li><p>努力站在审查者的立场上理解,同样也要努力理解作者的立场。。</p>
-</li>
-<li><p>针对你感觉非常好的地方以及不是很好的地方与开发者交流。</p>
-</li>
-<li><p>找出既能解决问题又能简化代码的方法，让代码变得简单。</p>
-</li>
-<li><p>提出你的实现方案，但要表现出作者也在考虑这种方案。(“你觉得这里用一个自定义校验如何？”)</p>
-</li>
-<li><p>程序风格样式和注释，同样也是代码审查的范围，而不仅仅是程序。</p>
-</li>
-</ul>
-<p>原文地址:<a href="http://www.cnblogs.com/zhangweizhong/p/4389884.html" target="_blank" rel="noopener">http://www.cnblogs.com/zhangweizhong/p/4389884.html</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1967,7 +2137,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1978,7 +2148,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1989,7 +2159,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2042,7 +2212,7 @@
     
       <span class="post-meta-item-text">总字数&#58;</span>
     
-    <span title="总字数">7.1k</span>
+    <span title="总字数">7.2k</span>
   
 </div>
 
