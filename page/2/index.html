@@ -283,6 +283,554 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/15/(原创)foef注意事项/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lydit">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lydit的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/15/(原创)foef注意事项/" itemprop="url">(原创)foef注意事项</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-15T16:14:26+08:00">
+                2017-12-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C-C/" itemprop="url" rel="index">
+                    <span itemprop="name">C/C++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  294字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>原创内容，转载请标明原文地址</p>
+<p>我们先来看下下面的代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//获取文件大小</span><br><span class="line">DWORD Get_File_Size(const char* m_FilePath)</span><br><span class="line">&#123;</span><br><span class="line">    unsigned long size;</span><br><span class="line">    if (_access(m_FilePath, 0) == -1)//文件不存在 2013.09.24</span><br><span class="line">        return 0;</span><br><span class="line">    </span><br><span class="line">    FILE* fp = fopen( m_FilePath, &quot;rb&quot; );</span><br><span class="line">    if(fp==NULL)</span><br><span class="line">        return 0;</span><br><span class="line">    fseek( fp, SEEK_SET, SEEK_END );</span><br><span class="line">    size=ftell(fp);</span><br><span class="line">    fclose(fp);</span><br><span class="line">    return size;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">BYTE bReadBuf[1024*100];</span><br><span class="line">    DWORD dwFileSize = Get_File_Size(&quot;C:\\pub.txt&quot;);</span><br><span class="line">    AfxMessageBox(IntToStr(dwFileSize));</span><br><span class="line">    FILE *fp = fopen(&quot;C:\\pub.txt&quot;,&quot;rb&quot;);</span><br><span class="line">    if (fp != NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        fread(bReadBuf,dwFileSize,1,fp);</span><br><span class="line">        if (!feof(fp))</span><br><span class="line">            AfxMessageBox(&quot;1&quot;);</span><br><span class="line">        else</span><br><span class="line">            AfxMessageBox(&quot;2&quot;);</span><br><span class="line">        int nRe = fread(bReadBuf,1,1,fp);</span><br><span class="line">        AfxMessageBox(IntToStr(nRe));</span><br><span class="line">        if (!feof(fp))</span><br><span class="line">            AfxMessageBox(&quot;1&quot;);</span><br><span class="line">        else</span><br><span class="line">            AfxMessageBox(&quot;2&quot;);</span><br><span class="line">        fclose(fp);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>其中pub.txt的文件属性为<br><img src="http://upload-images.jianshu.io/upload_images/7310251-7b3ff96c99dad0a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>弹出的内容分别为64，1，0，2</p>
+<p>获取出来的文件大小是正确的，但是如果按照这个大小去读取的话，是会发现，feof返回的是true，但是继续去读取的话，又读取不出来数据，但是这个时候再次判断feof则返回false了，</p>
+<p>原因在于，feof只有只有在读取超过的情况下，才会返回false</p>
+<p>具体的原因可以看下：<a href="http://baike.baidu.com/link?url=mdL8HEylLCJhN1dD6ZKq2EbBexXGn_GEfTDvEh45LFt7PSU4g3iOmPuQWfuOQ79kRxOCqyNUWqkt88iCPCqd9q" target="_blank" rel="noopener">http://baike.baidu.com/link?url=mdL8HEylLCJhN1dD6ZKq2EbBexXGn_GEfTDvEh45LFt7PSU4g3iOmPuQWfuOQ79kRxOCqyNUWqkt88iCPCqd9q</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/15/(转载)SHA-256算法 C语言实现/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lydit">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lydit的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/15/(转载)SHA-256算法 C语言实现/" itemprop="url">(转载)SHA-256算法 C语言实现</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-15T16:08:50+08:00">
+                2017-12-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C-C/" itemprop="url" rel="index">
+                    <span itemprop="name">C/C++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,344字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1.如果出现 _ftelli64未定义 的错误，将_ftelli64替换为ftello64。visual c应该不会有这种错误。<br>2.函数的第三个参数是计算后的字符串形式，不需要再转换，详情看示例代码。<br>3.默认计算结果是大写形式，如需小写，将函数中末尾处所有 %08X 替换为 %08x 即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/*用法示例*/</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line"></span><br><span class="line">extern char* StrSHA256(const char* str, long long length, char* sha256);</span><br><span class="line"></span><br><span class="line">int main(void)&#123;</span><br><span class="line">    char text[] = &quot;blackkitty&quot;;</span><br><span class="line">    char sha256[65];</span><br><span class="line">    StrSHA256(text,sizeof(text)-1,sha256);  // sizeof()计算的结果包含了末尾的&apos;\0&apos;应减1</span><br><span class="line">    puts(sha256);</span><br><span class="line">    puts(StrSHA256(text,sizeof(text)-1,sha256));    // 函数返回值即sha256，直接输出也可以</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7310251-629f7f1ff8519c2a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>使用在线加密验证</p>
+<p><a href="http://tool.oschina.net/encrypt?type=2" target="_blank" rel="noopener">http://tool.oschina.net/encrypt?type=2</a></p>
+<p>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line">#define SHA256_ROTL(a,b) (((a&gt;&gt;(32-b))&amp;(0x7fffffff&gt;&gt;(31-b)))|(a&lt;&lt;b))</span><br><span class="line">#define SHA256_SR(a,b) ((a&gt;&gt;b)&amp;(0x7fffffff&gt;&gt;(b-1)))</span><br><span class="line">#define SHA256_Ch(x,y,z) ((x&amp;y)^((~x)&amp;z))</span><br><span class="line">#define SHA256_Maj(x,y,z) ((x&amp;y)^(x&amp;z)^(y&amp;z))</span><br><span class="line">#define SHA256_E0(x) (SHA256_ROTL(x,30)^SHA256_ROTL(x,19)^SHA256_ROTL(x,10))</span><br><span class="line">#define SHA256_E1(x) (SHA256_ROTL(x,26)^SHA256_ROTL(x,21)^SHA256_ROTL(x,7))</span><br><span class="line">#define SHA256_O0(x) (SHA256_ROTL(x,25)^SHA256_ROTL(x,14)^SHA256_SR(x,3))</span><br><span class="line">#define SHA256_O1(x) (SHA256_ROTL(x,15)^SHA256_ROTL(x,13)^SHA256_SR(x,10))</span><br><span class="line">extern char* StrSHA256(const char* str, long long length, char* sha256)&#123;</span><br><span class="line">    /*</span><br><span class="line">    计算字符串SHA-256</span><br><span class="line">    参数说明：</span><br><span class="line">    str         字符串指针</span><br><span class="line">    length      字符串长度</span><br><span class="line">    sha256         用于保存SHA-256的字符串指针</span><br><span class="line">    返回值为参数sha256</span><br><span class="line">    */</span><br><span class="line">    char *pp, *ppend;</span><br><span class="line">    long l, i, W[64], T1, T2, A, B, C, D, E, F, G, H, H0, H1, H2, H3, H4, H5, H6, H7;</span><br><span class="line">    H0 = 0x6a09e667, H1 = 0xbb67ae85, H2 = 0x3c6ef372, H3 = 0xa54ff53a;</span><br><span class="line">    H4 = 0x510e527f, H5 = 0x9b05688c, H6 = 0x1f83d9ab, H7 = 0x5be0cd19;</span><br><span class="line">    long K[64] = &#123;</span><br><span class="line">        0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5,</span><br><span class="line">        0xd807aa98, 0x12835b01, 0x243185be, 0x550c7dc3, 0x72be5d74, 0x80deb1fe, 0x9bdc06a7, 0xc19bf174,</span><br><span class="line">        0xe49b69c1, 0xefbe4786, 0x0fc19dc6, 0x240ca1cc, 0x2de92c6f, 0x4a7484aa, 0x5cb0a9dc, 0x76f988da,</span><br><span class="line">        0x983e5152, 0xa831c66d, 0xb00327c8, 0xbf597fc7, 0xc6e00bf3, 0xd5a79147, 0x06ca6351, 0x14292967,</span><br><span class="line">        0x27b70a85, 0x2e1b2138, 0x4d2c6dfc, 0x53380d13, 0x650a7354, 0x766a0abb, 0x81c2c92e, 0x92722c85,</span><br><span class="line">        0xa2bfe8a1, 0xa81a664b, 0xc24b8b70, 0xc76c51a3, 0xd192e819, 0xd6990624, 0xf40e3585, 0x106aa070,</span><br><span class="line">        0x19a4c116, 0x1e376c08, 0x2748774c, 0x34b0bcb5, 0x391c0cb3, 0x4ed8aa4a, 0x5b9cca4f, 0x682e6ff3,</span><br><span class="line">        0x748f82ee, 0x78a5636f, 0x84c87814, 0x8cc70208, 0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2,</span><br><span class="line">    &#125;;</span><br><span class="line">    l = length + ((length % 64 &gt;= 56) ? (128 - length % 64) : (64 - length % 64));</span><br><span class="line">    if (!(pp = (char*)malloc((unsigned long)l))) return 0;</span><br><span class="line">    for (i = 0; i &lt; length; pp[i + 3 - 2 * (i % 4)] = str[i], i++);</span><br><span class="line">    for (pp[i + 3 - 2 * (i % 4)] = 128, i++; i &lt; l; pp[i + 3 - 2 * (i % 4)] = 0, i++);</span><br><span class="line">    *((long*)(pp + l - 4)) = length &lt;&lt; 3;</span><br><span class="line">    *((long*)(pp + l - 8)) = length &gt;&gt; 29;</span><br><span class="line">    for (ppend = pp + l; pp &lt; ppend; pp += 64)&#123;</span><br><span class="line">        for (i = 0; i &lt; 16; W[i] = ((long*)pp)[i], i++);</span><br><span class="line">        for (i = 16; i &lt; 64; W[i] = (SHA256_O1(W[i - 2]) + W[i - 7] + SHA256_O0(W[i - 15]) + W[i - 16]), i++);</span><br><span class="line">        A = H0, B = H1, C = H2, D = H3, E = H4, F = H5, G = H6, H = H7;</span><br><span class="line">        for (i = 0; i &lt; 64; i++)&#123;</span><br><span class="line">            T1 = H + SHA256_E1(E) + SHA256_Ch(E, F, G) + K[i] + W[i];</span><br><span class="line">            T2 = SHA256_E0(A) + SHA256_Maj(A, B, C);</span><br><span class="line">            H = G, G = F, F = E, E = D + T1, D = C, C = B, B = A, A = T1 + T2;</span><br><span class="line">        &#125;</span><br><span class="line">        H0 += A, H1 += B, H2 += C, H3 += D, H4 += E, H5 += F, H6 += G, H7 += H;</span><br><span class="line">    &#125;</span><br><span class="line">    free(pp - l);</span><br><span class="line">    sprintf(sha256, &quot;%08X%08X%08X%08X%08X%08X%08X%08X&quot;, H0, H1, H2, H3, H4, H5, H6, H7);</span><br><span class="line">    return sha256;</span><br><span class="line">&#125;</span><br><span class="line">extern char* FileSHA256(const char* file, char* sha256)&#123;</span><br><span class="line">    /*</span><br><span class="line">    计算文件SHA-256</span><br><span class="line">    参数说明：</span><br><span class="line">    file        文件路径字符串指针</span><br><span class="line">    sha256         用于保存SHA-256的字符串指针</span><br><span class="line">    返回值为参数sha256</span><br><span class="line">    */</span><br><span class="line">    FILE* fh;</span><br><span class="line">    char* addlp, T[64];</span><br><span class="line">    long addlsize, j, W[64], T1, T2, A, B, C, D, E, F, G, H, H0, H1, H2, H3, H4, H5, H6, H7;</span><br><span class="line">    long long length, i, cpys;</span><br><span class="line">    void *pp, *ppend;</span><br><span class="line">    H0 = 0x6a09e667, H1 = 0xbb67ae85, H2 = 0x3c6ef372, H3 = 0xa54ff53a;</span><br><span class="line">    H4 = 0x510e527f, H5 = 0x9b05688c, H6 = 0x1f83d9ab, H7 = 0x5be0cd19;</span><br><span class="line">    long K[64] = &#123;</span><br><span class="line">        0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5,</span><br><span class="line">        0xd807aa98, 0x12835b01, 0x243185be, 0x550c7dc3, 0x72be5d74, 0x80deb1fe, 0x9bdc06a7, 0xc19bf174,</span><br><span class="line">        0xe49b69c1, 0xefbe4786, 0x0fc19dc6, 0x240ca1cc, 0x2de92c6f, 0x4a7484aa, 0x5cb0a9dc, 0x76f988da,</span><br><span class="line">        0x983e5152, 0xa831c66d, 0xb00327c8, 0xbf597fc7, 0xc6e00bf3, 0xd5a79147, 0x06ca6351, 0x14292967,</span><br><span class="line">        0x27b70a85, 0x2e1b2138, 0x4d2c6dfc, 0x53380d13, 0x650a7354, 0x766a0abb, 0x81c2c92e, 0x92722c85,</span><br><span class="line">        0xa2bfe8a1, 0xa81a664b, 0xc24b8b70, 0xc76c51a3, 0xd192e819, 0xd6990624, 0xf40e3585, 0x106aa070,</span><br><span class="line">        0x19a4c116, 0x1e376c08, 0x2748774c, 0x34b0bcb5, 0x391c0cb3, 0x4ed8aa4a, 0x5b9cca4f, 0x682e6ff3,</span><br><span class="line">        0x748f82ee, 0x78a5636f, 0x84c87814, 0x8cc70208, 0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2,</span><br><span class="line">    &#125;;</span><br><span class="line">    fh = fopen(file, &quot;rb&quot;);</span><br><span class="line">    fseek(fh, 0, SEEK_END);</span><br><span class="line">    length = _ftelli64(fh);</span><br><span class="line">    addlsize = (56 - length % 64 &gt; 0) ? (64) : (128);</span><br><span class="line">    if (!(addlp = (char*)malloc(addlsize))) return 0;</span><br><span class="line">    cpys = ((length - (56 - length % 64)) &gt; 0) ? (length - length % 64) : (0);</span><br><span class="line">    j = (long)(length - cpys);</span><br><span class="line">    if (!(pp = (char*)malloc(j))) return 0;</span><br><span class="line">    fseek(fh, -j, SEEK_END);</span><br><span class="line">    fread(pp, 1, j, fh);</span><br><span class="line">    for (i = 0; i &lt; j; addlp[i + 3 - 2 * (i % 4)] = ((char*)pp)[i], i++);</span><br><span class="line">    free(pp);</span><br><span class="line">    for (addlp[i + 3 - 2 * (i % 4)] = 128, i++; i &lt; addlsize; addlp[i + 3 - 2 * (i % 4)] = 0, i++);</span><br><span class="line">    *((long*)(addlp + addlsize - 4)) = length &lt;&lt; 3;</span><br><span class="line">    *((long*)(addlp + addlsize - 8)) = length &gt;&gt; 29;</span><br><span class="line">    for (rewind(fh); 64 == fread(W, 1, 64, fh);)&#123;</span><br><span class="line">        for (i = 0; i &lt; 64; T[i + 3 - 2 * (i % 4)] = ((char*)W)[i], i++);</span><br><span class="line">        for (i = 0; i &lt; 16; W[i] = ((long*)T)[i], i++);</span><br><span class="line">        for (i = 16; i &lt; 64; W[i] = (SHA256_O1(W[i - 2]) + W[i - 7] + SHA256_O0(W[i - 15]) + W[i - 16]), i++);</span><br><span class="line">        A = H0, B = H1, C = H2, D = H3, E = H4, F = H5, G = H6, H = H7;</span><br><span class="line">        for (i = 0; i &lt; 64; i++)&#123;</span><br><span class="line">            T1 = H + SHA256_E1(E) + SHA256_Ch(E, F, G) + K[i] + W[i];</span><br><span class="line">            T2 = SHA256_E0(A) + SHA256_Maj(A, B, C);</span><br><span class="line">            H = G, G = F, F = E, E = D + T1, D = C, C = B, B = A, A = T1 + T2;</span><br><span class="line">        &#125;</span><br><span class="line">        H0 += A, H1 += B, H2 += C, H3 += D, H4 += E, H5 += F, H6 += G, H7 += H;</span><br><span class="line">    &#125;</span><br><span class="line">    for (pp = addlp, ppend = addlp + addlsize; pp &lt; ppend; pp = (long*)pp + 16)&#123;</span><br><span class="line">        for (i = 0; i &lt; 16; W[i] = ((long*)pp)[i], i++);</span><br><span class="line">        for (i = 16; i &lt; 64; W[i] = (SHA256_O1(W[i - 2]) + W[i - 7] + SHA256_O0(W[i - 15]) + W[i - 16]), i++);</span><br><span class="line">        A = H0, B = H1, C = H2, D = H3, E = H4, F = H5, G = H6, H = H7;</span><br><span class="line">        for (i = 0; i &lt; 64; i++)&#123;</span><br><span class="line">            T1 = H + SHA256_E1(E) + SHA256_Ch(E, F, G) + K[i] + W[i];</span><br><span class="line">            T2 = SHA256_E0(A) + SHA256_Maj(A, B, C);</span><br><span class="line">            H = G, G = F, F = E, E = D + T1, D = C, C = B, B = A, A = T1 + T2;</span><br><span class="line">        &#125;</span><br><span class="line">        H0 += A, H1 += B, H2 += C, H3 += D, H4 += E, H5 += F, H6 += G, H7 += H;</span><br><span class="line">    &#125;</span><br><span class="line">    free(addlp); fclose(fh);</span><br><span class="line">    sprintf(sha256, &quot;%08X%08X%08X%08X%08X%08X%08X%08X&quot;, H0, H1, H2, H3, H4, H5, H6, H7);</span><br><span class="line">    return sha256;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>原文地址:<a href="http://blog.csdn.net/c_duoduo/article/details/43889759" target="_blank" rel="noopener">http://blog.csdn.net/c_duoduo/article/details/43889759</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/14/(转载)注意_PreTranslateMessage弹出框出错/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lydit">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lydit的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/14/(转载)注意_PreTranslateMessage弹出框出错/" itemprop="url">(转载)注意:PreTranslateMessage弹出框出错</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-14T15:39:20+08:00">
+                2017-12-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C-C/" itemprop="url" rel="index">
+                    <span itemprop="name">C/C++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,255字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>dlg.DoModal()截住了界面消息,所以返回时原来的pMsg的内容已经更改了,消息,窗口句柄都不在是if以前的值了,而且窗口句柄应该是对话框里的子窗口的句柄,所以调用CFrameWnd::PreTranslateMessage(pMsg);<br>时pMsg的窗口句柄是个无效值(窗口已销毁)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">BOOL CViewUP::PreTranslateMessage(MSG* pMsg)</span><br><span class="line">&#123;</span><br><span class="line">    if (pMsg-&gt;message == WM_KEYDOWN)</span><br><span class="line">    &#123;</span><br><span class="line">        if(pMsg-&gt;wParam ==&apos;M&apos; || pMsg-&gt;wParam == &apos;m&apos;)//暂时为按“M”键退出系统</span><br><span class="line">        &#123;</span><br><span class="line">            AfxGetApp()-&gt;m_pMainWnd-&gt;SendMessage(WM_CLOSE,0L,0L);</span><br><span class="line">            return TRUE;</span><br><span class="line">        &#125;</span><br><span class="line">        else if(pMsg-&gt;wParam==&apos;Z&apos; || pMsg-&gt;wParam == &apos;z&apos;)//暂时为按“Z”键启动就地系统</span><br><span class="line">        &#123;</span><br><span class="line">            //激活上一个窗口还是退出??因须要而定</span><br><span class="line">            CWnd* pWnd = FindWindow(NULL,_T(&quot;就地站_JD&quot;));</span><br><span class="line">            if (pWnd)</span><br><span class="line">            &#123;</span><br><span class="line">                pWnd-&gt;ShowWindow(SW_SHOWNA );//SW_SHOWMAXIMIZED);</span><br><span class="line">                pWnd-&gt;SetForegroundWindow();</span><br><span class="line">                return TRUE;</span><br><span class="line">            &#125;</span><br><span class="line">            // CAONumValueDlg aoDlg;</span><br><span class="line">            // aoDlg. DoModal();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return CView::PreTranslateMessage(pMsg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>注意事项</p>
+<p>模态窗口极大地简化了一些需要和用户交互的操作，好处显而易见。但这里还是要指出一些需要注意的地方，否则使用的时候很可能会出问题。</p>
+<p>影响PreTranslateMessage机制</p>
+<p>在使用MFC，WTL等进行开发的时候，经常用到PreTranslateMessage机制，这个机制可以让我们在消息被派发之前先做一些事情。很多人以为PreTranslateMessage是Windows本身支持的，其实不然。PreTranslateMessage是MFC和WTL自己引入的一个概念，完全是和Windows无关的。在MFC和WTL的消息循环中，这两个库的设计者在消息分发之前，人为的加了一些代码，使得整个架构支持这一套机制。</p>
+<p>正是如此，如果在正常的流程中弹出了模态窗口，就会使正常的PreTranslateMessage机制失效。因为模态窗口中已经包含了一个消息循环，接管了线程中缺省的消息循环。而这个消息循环是在DialogBox这个API函数中执行的，显然不可能再有PreTranalateMessage机制了。</p>
+<p>为了解决这一问题，只有让模态窗口也使用和UI线程相同的消息循环，MFC正是这么做的。在MFC中，对话框类的DoModal函数，并不是调用DialogBox函数，而是直接使用CreateWindows创建一个非模态窗口，在窗口创建成功之后再调用MFC自己的消息循环，这样就可以让PreTranslateMessage继续生效。同时在窗口创建出来之后，必须再做一些别的操作，使这个模态窗口的父窗口失效（一般直接把窗口Disable掉）。同时消息循环里有合适的退出条件，并有恢复现场的一些操作，具体可以查看MFC的DoModal函数。</p>
+<p>WTL到目前为止，貌似暂时还没有一个合适的方案来解决这个问题。事实上WTL的PreTranslateMessage机制实现的其实是有点问题的，或许以后会在这方面做一定的增强。</p>
+<p>可能导致崩溃</p>
+<p>这是一个严重问题，在条件合适的情况下，这个崩溃是必然的。</p>
+<p>因为模态窗口弹出来之后，模态窗口后面的代码在窗口关闭之前将不会得到执行。然而此时整个窗口是在正常运行的，对于一些极端的情况，是极有可能造成崩溃的。下面看一个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">void CTestDlg::OnOK()</span><br><span class="line">&#123;</span><br><span class="line">    CInputDialog dlg;</span><br><span class="line">    If(dlg.DoModal() == IDOK)</span><br><span class="line">    &#123;</span><br><span class="line">        m_nValue = dlg.GetValue();</span><br><span class="line">        UpdateData(FALSE);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这是一段典型的MFC代码，在绝大多数情况下，不会有任何问题。但是由于模态窗口弹出的时候，只是父窗口不能操作，但别的窗口完全还能正常运行，这时候就非常有可能由于某种原因，CTestDlg类已经销毁了，而CInputDialog却不知道，还在继续执行，结果到了IDOK之后，对CTestDialog类的成员变量m_nValue赋值，就会出现崩溃了。</p>
+<p>这个问题，如果在多线程的情况下，将会更加严重。因为在多线程的情况下，将会有更加多的不可预料的因素，所以使用的时候要更加小心。</p>
+<p>改成这样就OK了,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">if (pMsg-&gt; message == WM_CHAR)</span><br><span class="line">&#123;</span><br><span class="line">    MSG msg = *pMsg;//后来发现这样还是有点问题,模态对话框回车后，鼠标不见了</span><br><span class="line">    CMyDlg dlg;</span><br><span class="line">    dlg.DoModal();</span><br><span class="line">    *pMsg = msg; //后来发现这样还是有点问题,模态对话框回车后，鼠标不见了</span><br><span class="line">	</span><br><span class="line">    return   TRUE;//最终方法还是在这里直接返回吧，破坏消息循环总是不好的。</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>我估计是MFC保存了一个当前消息的结构来跟踪消息路由,dlg.DoModal();时这个结构的值都更新好多遍了</p>
+<p>/////注意///下面是自己实践的代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">BOOL CDoctorAdd::PreTranslateMessage(MSG* pMsg)</span><br><span class="line">&#123;</span><br><span class="line">    if(pMsg-&gt;hwnd==((CButton*)GetDlgItem(IDOK))-&gt;m_hWnd &amp;&amp; pMsg-&gt;message==WM_MOUSEMOVE)</span><br><span class="line">    UpdateData();</span><br><span class="line">    if(m_number.IsEmpty())</span><br><span class="line">    &#123;</span><br><span class="line">        CMyDlg dlg;</span><br><span class="line">        dlg.DoModal();</span><br><span class="line">        //return CDialog::PreTranslateMessage(pMsg);</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>//呵呵这样就不报错啦</p>
+<p>转自:<a href="http://blog.sina.com.cn/s/blog_9e2e84050101fnjk.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_9e2e84050101fnjk.html</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/14/(转载)对于代码审查的认识和理解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -885,7 +1433,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -960,7 +1508,7 @@
     
       <span class="post-meta-item-text">总字数&#58;</span>
     
-    <span title="总字数">7.2k</span>
+    <span title="总字数">8.2k</span>
   
 </div>
 
