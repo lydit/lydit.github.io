@@ -283,6 +283,190 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/15/(原创)cpprestsdk实现通过阿里云拨打电话(语音通知)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lydit">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lydit的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/15/(原创)cpprestsdk实现通过阿里云拨打电话(语音通知)/" itemprop="url">(原创)cpprestsdk实现通过阿里云拨打电话(语音通知)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-15T11:07:38+08:00">
+                2018-06-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C-C/" itemprop="url" rel="index">
+                    <span itemprop="name">C/C++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/06/15/(原创)cpprestsdk实现通过阿里云拨打电话(语音通知)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/06/15/(原创)cpprestsdk实现通过阿里云拨打电话(语音通知)/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  867字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>下面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br></pre></td><td class="code"><pre><span class="line">srand(time(0));//初始化的时候使用</span><br><span class="line"></span><br><span class="line">static char dec2hex(short int c)</span><br><span class="line">&#123;</span><br><span class="line">    if (0 &lt;= c &amp;&amp; c &lt;= 9)</span><br><span class="line">    &#123;</span><br><span class="line">        return c + &apos;0&apos;;</span><br><span class="line">    &#125;</span><br><span class="line">    else if (10 &lt;= c &amp;&amp; c &lt;= 15)</span><br><span class="line">    &#123;</span><br><span class="line">        return c + &apos;A&apos; - 10;</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">static char* change(char* str)</span><br><span class="line">&#123;</span><br><span class="line">//    assert(str != NULL);//断言，判断str知否指向空</span><br><span class="line">    char* pstr = str;//由于str要进行变化，以后还要用到，所以先把他用pstr存起来</span><br><span class="line">    int space_count = 0;//计数器</span><br><span class="line">    char* end = NULL;</span><br><span class="line">    char* end_new = NULL;</span><br><span class="line">    while(*str++!=&apos;\0&apos;)</span><br><span class="line">    &#123;</span><br><span class="line">        if(*str == &apos;+&apos; || *str == &apos;*&apos;)</span><br><span class="line">            space_count++;//进行空格计数</span><br><span class="line">        else if(*str == &apos;~&apos;)</span><br><span class="line">            space_count--;</span><br><span class="line">    &#125;</span><br><span class="line">    end = str;</span><br><span class="line">    end_new = end + 2*space_count;</span><br><span class="line">    str = pstr;</span><br><span class="line">    while(end != end_new)//当新结束指针和原结束指针不相等时</span><br><span class="line">    &#123;</span><br><span class="line">        if(*end == &apos;+&apos;)</span><br><span class="line">        &#123;</span><br><span class="line">            *end_new-- = &apos;0&apos;;</span><br><span class="line">            *end_new-- = &apos;2&apos;;</span><br><span class="line">            *end_new-- = &apos;%&apos;;</span><br><span class="line">            end--;</span><br><span class="line">        &#125;</span><br><span class="line">        else if(*end == &apos;*&apos;)</span><br><span class="line">        &#123;</span><br><span class="line">            *end_new-- = &apos;A&apos;;</span><br><span class="line">            *end_new-- = &apos;2&apos;;</span><br><span class="line">            *end_new-- = &apos;%&apos;;</span><br><span class="line">            end--;</span><br><span class="line">        &#125;</span><br><span class="line">        else if(*end == &apos;E&apos; &amp;&amp; *end - 1 == &apos;7&apos; &amp;&amp; *end - 2 == &apos;%&apos;)</span><br><span class="line">        &#123;</span><br><span class="line">            *end_new-- = &apos;~&apos;;</span><br><span class="line">            end -= 3;</span><br><span class="line">        &#125;</span><br><span class="line">        else//否则进行赋值</span><br><span class="line">        &#123;</span><br><span class="line">            *end_new-- = *end--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return pstr;//将变化后的字符串的首地址返回</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">static void urlencode_v30(char url[])</span><br><span class="line">&#123;</span><br><span class="line">    int i = 0;</span><br><span class="line">    int len = strlen(url);</span><br><span class="line">    int res_len = 0;</span><br><span class="line">    char res[1024*5];</span><br><span class="line">    for (i = 0; i &lt; len; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        char c = url[i];</span><br><span class="line">        if (    (&apos;0&apos; &lt;= c &amp;&amp; c &lt;= &apos;9&apos;) ||</span><br><span class="line">                (&apos;a&apos; &lt;= c &amp;&amp; c &lt;= &apos;z&apos;) ||</span><br><span class="line">                (&apos;A&apos; &lt;= c &amp;&amp; c &lt;= &apos;Z&apos;) ||</span><br><span class="line">                c == &apos;/&apos; || c == &apos;.&apos; || c == &apos;-&apos; || c == &apos;_&apos;)</span><br><span class="line">        &#123;</span><br><span class="line">            res[res_len++] = c;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            int j = (short int)c;</span><br><span class="line">            if (j &lt; 0)</span><br><span class="line">                j += 256;</span><br><span class="line">            int i1, i0;</span><br><span class="line">            i1 = j / 16;</span><br><span class="line">            i0 = j - i1 * 16;</span><br><span class="line">            res[res_len++] = &apos;%&apos;;</span><br><span class="line">            res[res_len++] = dec2hex(i1);</span><br><span class="line">            res[res_len++] = dec2hex(i0);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    res[res_len] = &apos;\0&apos;;</span><br><span class="line">//    printf(&quot;%s,Line=%d,res=%s,res_len=%d\n&quot;, __FUNCTION__,__LINE__,res,res_len);</span><br><span class="line">    strcpy(url, res);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">static char* SpecialUrlEncode(const char *pSrc)</span><br><span class="line">&#123;</span><br><span class="line">    char pTempSrc[1024*5];</span><br><span class="line">    memset(pTempSrc,0,sizeof(pTempSrc));</span><br><span class="line">    strcpy(pTempSrc,pSrc);</span><br><span class="line"></span><br><span class="line">    printf(&quot;%s,Line=%d,pTempSrc=%s\n&quot;, __FUNCTION__,__LINE__,pTempSrc);</span><br><span class="line">    urlencode_v30(pTempSrc);</span><br><span class="line"></span><br><span class="line">    char *pChange = change(pTempSrc);</span><br><span class="line">    return pChange;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int RestSDKDll_ALICallByTts(const char *pAccessKey,const char *pAccessKeySecret,const char *pCallNumber,const char *pShowNum,const char *pTTSCode,const char *pJson)</span><br><span class="line">&#123;</span><br><span class="line">	m_nReqID = rand();</span><br><span class="line">	struct timespec time;</span><br><span class="line">    clock_gettime(CLOCK_REALTIME, &amp;time);  //获取相对于1970到现在的秒数</span><br><span class="line">    struct tm nowTime;</span><br><span class="line">    gmtime_r(&amp;time.tv_sec, &amp;nowTime);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    char pTime[64],pUrlEncode_Time[256];</span><br><span class="line">    char pUrlEncode_Json[1024];</span><br><span class="line">    memset(pTime,0,sizeof(pTime));</span><br><span class="line">    memset(pUrlEncode_Time,0,sizeof(pUrlEncode_Time));</span><br><span class="line">    memset(pUrlEncode_Json,0,sizeof(pUrlEncode_Json));</span><br><span class="line">    sprintf(pTime,&quot;%04d-%02d-%02dT%02d:%02d:%02dZ&quot;,nowTime.tm_year + 1900,nowTime.tm_mon+1,nowTime.tm_mday,nowTime.tm_hour,nowTime.tm_min,nowTime.tm_sec);</span><br><span class="line"></span><br><span class="line">    strcpy(pUrlEncode_Time,pTime);</span><br><span class="line">    strcpy(pUrlEncode_Json,pJson);</span><br><span class="line">    urlencode_v30(pUrlEncode_Time);</span><br><span class="line">    urlencode_v30(pUrlEncode_Json);</span><br><span class="line">    printf(&quot;%s,Line=%d,pUrlEncode_Time=%s,pUrlEncode_Json=%s\n&quot;, __FUNCTION__,__LINE__,pUrlEncode_Time,pUrlEncode_Json);</span><br><span class="line"></span><br><span class="line">	char pSign[1024*5];</span><br><span class="line">	sprintf(pSign,&quot;AccessKeyId=%s&amp;Action=SingleCallByTts&amp;CalledNumber=%s&amp;CalledShowNumber=%s&amp;Format=XML&amp;OutId=123&amp;RegionId=cn-hangzhou&amp;SignatureMethod=HMAC-SHA1&amp;SignatureNonce=%d&amp;SignatureVersion=1.0&amp;Timestamp=%s&amp;TtsCode=%s&amp;TtsParam=%s&amp;Version=2017-05-25&quot;,</span><br><span class="line">		pAccessKey,pCallNumber,pShowNum,m_nReqID,</span><br><span class="line">		pUrlEncode_Time,</span><br><span class="line">		pTTSCode,pUrlEncode_Json);</span><br><span class="line"></span><br><span class="line">	sprintf(pSign,&quot;GET&amp;%s&amp;%s&quot;,&quot;%2F&quot;,SpecialUrlEncode(pSign));</span><br><span class="line">	printf(&quot;%s,Line=%d,Sign=%s\n&quot;, __FUNCTION__,__LINE__,pSign);</span><br><span class="line"></span><br><span class="line">	unsigned char digest[64] = &#123;&apos;\0&apos;&#125;;</span><br><span class="line">    unsigned int digest_len = 0;</span><br><span class="line"></span><br><span class="line">    char pTempSecret[128];</span><br><span class="line">    memset(pTempSecret,0,sizeof(pTempSecret));</span><br><span class="line">    sprintf(pTempSecret,&quot;%s&amp;&quot;,pAccessKeySecret);</span><br><span class="line">	HMAC(EVP_sha1(), pTempSecret, strlen(pTempSecret), (unsigned char*)pSign, strlen(pSign), digest, &amp;digest_len);</span><br><span class="line"></span><br><span class="line">	char mdString[41] = &#123;&apos;\0&apos;&#125;;</span><br><span class="line">    for(int i = 0; i &lt; 20; i++)</span><br><span class="line">        sprintf(&amp;mdString[i*2], &quot;%02x&quot;, (unsigned int)digest[i]);</span><br><span class="line">    printf(&quot;%s,Line=%d,Sign=%s,mdString=%s\n&quot;, __FUNCTION__,__LINE__,pSign,mdString);</span><br><span class="line"></span><br><span class="line">    std::string pBase64Rlt = base64_encode(digest, digest_len);</span><br><span class="line"></span><br><span class="line">    printf(&quot;%s,Line=%d,pBase64Rlt=%s\n&quot;, __FUNCTION__,__LINE__,pBase64Rlt.c_str());</span><br><span class="line"></span><br><span class="line">    sprintf(pSign,&quot;http://dyvmsapi.aliyuncs.com/?Signature=%s&amp;AccessKeyId=%s&amp;Action=SingleCallByTts&amp;CalledNumber=%s&amp;CalledShowNumber=%s&amp;Format=XML&amp;OutId=123&amp;RegionId=cn-hangzhou&amp;SignatureMethod=HMAC-SHA1&amp;SignatureNonce=%d&amp;SignatureVersion=1.0&amp;Timestamp=%s&amp;TtsCode=%s&amp;TtsParam=%s&amp;Version=2017-05-25&quot;,</span><br><span class="line">	SpecialUrlEncode(pBase64Rlt.c_str()),pAccessKey,pCallNumber,pShowNum,m_nReqID,</span><br><span class="line">        pUrlEncode_Time,</span><br><span class="line">	   pTTSCode,pUrlEncode_Json);</span><br><span class="line">    printf(&quot;%s,Line=%d,Sign=%s\n&quot;, __FUNCTION__,__LINE__,pSign);</span><br><span class="line"></span><br><span class="line">    http_client_config config;</span><br><span class="line">    config.set_timeout(utility::seconds(90)); //设置为90秒超时</span><br><span class="line">    http_client client(pSign, config);//F20170720</span><br><span class="line"></span><br><span class="line">    http_request request(methods::GET);</span><br><span class="line">    request.headers().add(U(&quot;Content-Type&quot;), U(&quot;application/json&quot;));</span><br><span class="line">    client.request(request).get();</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/22/(原创)vc6修改系统控件默认风格/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1975,195 +2159,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/15/(原创)linux下Microsoftcpprestsdk支持https(server)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="lydit">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lydit的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/15/(原创)linux下Microsoftcpprestsdk支持https(server)/" itemprop="url">(原创)linux下Microsoftcpprestsdk支持https(server)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-15T16:15:23+08:00">
-                2017-12-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C-C/" itemprop="url" rel="index">
-                    <span itemprop="name">C/C++</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/12/15/(原创)linux下Microsoftcpprestsdk支持https(server)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/12/15/(原创)linux下Microsoftcpprestsdk支持https(server)/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  959字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  6分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>原创，转载请标明源地址</p>
-<p>之前看网上一堆的资料说Microsoft/cpprestsdk不支持https或者说只支持window下的https，差点就被误导了，没办法，只好自己去翻了下源代码</p>
-<p>先说明下linux版本把，centos7</p>
-<p>创建ssl证书啥的，网上一堆的资料，这边就不再说了，直接贴源代码了<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cpprest/uri.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cpprest/http_listener.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cpprest/http_client.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cpprest/asyncrt_utils.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cpprest/filestream.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(lib, <span class="meta-string">"cpprest_2_7.lib"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(lib, <span class="meta-string">"bcrypt.lib"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(lib, <span class="meta-string">"crypt32.lib"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(lib, <span class="meta-string">"winhttp.lib"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(lib, <span class="meta-string">"httpapi.lib"</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> web;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> http;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> utility;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> http::experimental::listener;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> web::http;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> web::http::client;</span><br><span class="line"><span class="comment">//using namespace concurrency;</span></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CommandHandler</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    CommandHandler() &#123;&#125;</span><br><span class="line">    CommandHandler(utility::<span class="keyword">string_t</span> url,http_listener_config server_config);</span><br><span class="line">    pplx::task&lt;<span class="keyword">void</span>&gt; open() &#123; <span class="keyword">return</span> m_listener.open(); &#125;</span><br><span class="line">    pplx::task&lt;<span class="keyword">void</span>&gt; close() &#123; <span class="keyword">return</span> m_listener.close(); &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">handle_get</span><span class="params">(http_request message)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">handle_post</span><span class="params">(http_request message)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">handle_put</span><span class="params">(http_request message)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">handle_del</span><span class="params">(http_request message)</span></span>;</span><br><span class="line">    http_listener m_listener;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">CommandHandler::CommandHandler(utility::<span class="keyword">string_t</span> url,http_listener_config server_config) : m_listener(url,server_config)</span><br><span class="line">&#123;</span><br><span class="line">    m_listener.support(methods::GET, <span class="built_in">std</span>::bind(&amp;CommandHandler::handle_get, <span class="keyword">this</span>, <span class="built_in">std</span>::placeholders::_1));</span><br><span class="line">    m_listener.support(methods::POST, <span class="built_in">std</span>::bind(&amp;CommandHandler::handle_post, <span class="keyword">this</span>, <span class="built_in">std</span>::placeholders::_1));</span><br><span class="line">    m_listener.support(methods::PUT, <span class="built_in">std</span>::bind(&amp;CommandHandler::handle_put, <span class="keyword">this</span>, <span class="built_in">std</span>::placeholders::_1));</span><br><span class="line">    m_listener.support(methods::DEL, <span class="built_in">std</span>::bind(&amp;CommandHandler::handle_del, <span class="keyword">this</span>, <span class="built_in">std</span>::placeholders::_1));</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">void</span> CommandHandler::handle_get(http_request message)</span><br><span class="line">&#123;</span><br><span class="line">    ucout &lt;&lt; <span class="string">"Method: "</span> &lt;&lt; message.method() &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    ucout &lt;&lt; <span class="string">"URI: "</span> &lt;&lt; http::uri::decode(message.relative_uri().path()) &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    ucout &lt;&lt; <span class="string">"Query: "</span> &lt;&lt; http::uri::decode(message.relative_uri().query()) &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    message.reply(status_codes::OK, <span class="string">"ACCEPTED"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> CommandHandler::handle_post(http_request message)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//std::unordered_map&lt;std::string, std::unordered_map&lt;std::string, std::vector&lt;unsigned char&gt;&gt;&gt; multipart_form_data = granada::httpex::parserex::ParseMultipartFormData(message);</span></span><br><span class="line">    ucout &lt;&lt; <span class="string">"Method: "</span> &lt;&lt; message.method() &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    ucout &lt;&lt; <span class="string">"URI: "</span> &lt;&lt; http::uri::decode(message.relative_uri().path()) &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    ucout &lt;&lt; <span class="string">"Query: "</span> &lt;&lt; http::uri::decode(message.relative_uri().query()) &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    message.reply(status_codes::OK, <span class="string">"POST"</span>);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> CommandHandler::handle_put(http_request message)</span><br><span class="line">&#123;</span><br><span class="line">    ucout &lt;&lt; <span class="string">"Method: "</span> &lt;&lt; message.method() &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    ucout &lt;&lt; <span class="string">"URI: "</span> &lt;&lt; http::uri::decode(message.relative_uri().path()) &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    ucout &lt;&lt; <span class="string">"Query: "</span> &lt;&lt; http::uri::decode(message.relative_uri().query()) &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    message.reply(status_codes::OK, <span class="string">"PUT"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> CommandHandler::handle_del(http_request message)</span><br><span class="line">&#123;</span><br><span class="line">    ucout &lt;&lt; <span class="string">"Method: "</span> &lt;&lt; message.method() &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    ucout &lt;&lt; <span class="string">"URI: "</span> &lt;&lt; http::uri::decode(message.relative_uri().path()) &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    ucout &lt;&lt; <span class="string">"Query: "</span> &lt;&lt; http::uri::decode(message.relative_uri().query()) &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    message.reply(status_codes::OK, <span class="string">"DEL"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">try</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//用C++ REST SDK编写HTTP服务端，需要在所有的网络接口上监听时，</span></span><br><span class="line">        <span class="comment">//Windows下应使用地址"http://*:8080"，</span></span><br><span class="line">        <span class="comment">//Linux下应使用地址"http://0.0.0.0:8080"。</span></span><br><span class="line">        </span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">char</span> * self_signed_cert = <span class="string">R"(</span></span><br><span class="line"><span class="string">-----BEGIN CERTIFICATE-----</span></span><br><span class="line"><span class="string">MIIDlzCCAn+gAwIBAgIJAP9ZV+1X94UjMA0GCSqGSIb3DQEBBQUAMGIxCzAJBgNV</span></span><br><span class="line"><span class="string">BAYTAkNOMQswCQYDVQQIDAJTSDELMAkGA1UEBwwCU0gxEjAQBgNVBAoMCU1JQ1JP</span></span><br><span class="line"><span class="string">U09GVDERMA8GA1UECwwISFBDLVBBQ0sxEjAQBgNVBAMMCWxvY2FsaG9zdDAeFw0x</span></span><br><span class="line"><span class="string">NTA4MTkwOTA0MjhaFw00MzAxMDMwOTA0MjhaMGIxCzAJBgNVBAYTAkNOMQswCQYD</span></span><br><span class="line"><span class="string">VQQIDAJTSDELMAkGA1UEBwwCU0gxEjAQBgNVBAoMCU1JQ1JPU09GVDERMA8GA1UE</span></span><br><span class="line"><span class="string">CwwISFBDLVBBQ0sxEjAQBgNVBAMMCWxvY2FsaG9zdDCCASIwDQYJKoZIhvcNAQEB</span></span><br><span class="line"><span class="string">BQADggEPADCCAQoCggEBALLv7AAPa+4wYpa+3tqc9HIHhh8kv/MpV2Dm+oKG27iH</span></span><br><span class="line"><span class="string">zOugMNAPqLzMAaWCzDRyw27I+jPS3pzAAu6rQ0v2H6XNrie1YEEV27j1WOUS9iFy</span></span><br><span class="line"><span class="string">vcf6Y+ywUKXvFlN/VM/ZFz9Z8U3jc7Y6unIyoUs8UdX/RRITspb2m7SUxlmLJ+4c</span></span><br><span class="line"><span class="string">qiLrHwstNB2NHIZN72oc8DaS5eBqBdT9h6NO62RSBTrAlR7Vk9eU/5trYkd5+PoC</span></span><br><span class="line"><span class="string">pispvU+7Fe24uVerGgU6Yoyd7DMj+3BpbG3g/VkOlGhgH0DNtbKu3v/XOmnzdZn6</span></span><br><span class="line"><span class="string">dzoOoGFNpG1NeH2Xv0vnvEZP6WG4h/TFSafBJMONNnMCAwEAAaNQME4wHQYDVR0O</span></span><br><span class="line"><span class="string">BBYEFO1mAjAmLk1J0iT93xfczAE5mxgzMB8GA1UdIwQYMBaAFO1mAjAmLk1J0iT9</span></span><br><span class="line"><span class="string">3xfczAE5mxgzMAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQEFBQADggEBAFB8AACf</span></span><br><span class="line"><span class="string">5O+sPe3PZ8IPgwZb+BCXdoXc2rngR/gOaYO019TZyNLuHRzW9FtplzW25IbQ9Jnc</span></span><br><span class="line"><span class="string">b+jmY2Ill7Zf3TX4OhHEwscJ1G2LBaqZfQlwSbYJmCzvRNSzSbF3RigNQD5Qhdph</span></span><br><span class="line"><span class="string">vVBdvVGTZnVeatjTOFKUyfhcXf4DMb6eMfaU6il/VJCSMW0j3hYNQjPm3V/PLxnG</span></span><br><span class="line"><span class="string">fd9T4hpCUd8MK2XG4RqJAzh6x/6v0fc6mRHBS5+qTWYSDGFwITrU1pP2L9qFegpm</span></span><br><span class="line"><span class="string">aNAom7bdENU8uivd+vrLnG2fKvFSssjVfaXpFLKAICfTJY9A3/CWnZ1AcbE5El7A</span></span><br><span class="line"><span class="string">adctopihoUrlAb0=</span></span><br><span class="line"><span class="string">-----END CERTIFICATE-----</span></span><br><span class="line"><span class="string">        )"</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">char</span> * private_key = <span class="string">R"(</span></span><br><span class="line"><span class="string">-----BEGIN PRIVATE KEY-----</span></span><br><span class="line"><span class="string">MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCy7+wAD2vuMGKW</span></span><br><span class="line"><span class="string">vt7anPRyB4YfJL/zKVdg5vqChtu4h8zroDDQD6i8zAGlgsw0csNuyPoz0t6cwALu</span></span><br><span class="line"><span class="string">q0NL9h+lza4ntWBBFdu49VjlEvYhcr3H+mPssFCl7xZTf1TP2Rc/WfFN43O2Orpy</span></span><br><span class="line"><span class="string">MqFLPFHV/0USE7KW9pu0lMZZiyfuHKoi6x8LLTQdjRyGTe9qHPA2kuXgagXU/Yej</span></span><br><span class="line"><span class="string">TutkUgU6wJUe1ZPXlP+ba2JHefj6AqYrKb1PuxXtuLlXqxoFOmKMnewzI/twaWxt</span></span><br><span class="line"><span class="string">4P1ZDpRoYB9AzbWyrt7/1zpp83WZ+nc6DqBhTaRtTXh9l79L57xGT+lhuIf0xUmn</span></span><br><span class="line"><span class="string">wSTDjTZzAgMBAAECggEAenzd8lScL1qTwlk6ODAE7SHVX/BKLWv5Um4KwdsLAVCE</span></span><br><span class="line"><span class="string">qC7p+yMdANAtuFzG6Ig+29Fb5KnOlUKjPzmhQZhjpZ4cPzZbg3IxDHV2uqi2L8NZ</span></span><br><span class="line"><span class="string">wlDWoik3q770a4fYSMd0sHsjQYwXo4CkLJQX8WaDJpgtcehl8g0yHPVSqe0mEkoL</span></span><br><span class="line"><span class="string">dxdqaZnxprchscxefWaGaysIxEO+V+ZOBaPNf4i8PmBKoMNczWZbLcdKhRL7aLeW</span></span><br><span class="line"><span class="string">ngPQp1xSWYoN8fPoonpL2qTSop3Nsc2INpwGcYPAj3vxdasC3+DZ8JEJI2AmxpVB</span></span><br><span class="line"><span class="string">13BLkd3nDzOwimZIlu9Fv+NMJ1vb9XdC249ZOqo68QKBgQDigkws1W429nqDtEtQ</span></span><br><span class="line"><span class="string">Dr5ebHTdP4gZlNt6vWx5obGLCMBAzoyubfNCCBTCYsCPj8hXxNfiPArPFFkIgEx9</span></span><br><span class="line"><span class="string">+w0n7BlaYL6SD2xD4q+YzA1/j4Loakxc7N9z8Cyu+/YHifvLhzwqgFnkLfFnVq9N</span></span><br><span class="line"><span class="string">TF8TatHUYcrbcpawJLz0wr/cnQKBgQDKPAYNTzqPLOOBaE4DfnJNn2zctGU8G5Xp</span></span><br><span class="line"><span class="string">0L/ED8O1t9AjjV2xVO8PDPNDZAxMzgnIbWeU9iWRSLbr7NloXElKh/QlITjAbSXe</span></span><br><span class="line"><span class="string">HsUruq1SmDgiaUhEtDaaJ1SqSZZWY2BZqNXMdILOCgvZGnOyyBR2U49zuNaRHyhm</span></span><br><span class="line"><span class="string">kmZMdIIKTwKBgQDezAk/hEQfvfuuNpZpzcbEu+uLgKVPfFMSfOYJEdnAB0CLvl80</span></span><br><span class="line"><span class="string">Z6QBzE8XEOmVjHkkk9NBjYuYOsyEhyY2OM2s+hfKBSUOKCt27q+IHRYd5bx+/afV</span></span><br><span class="line"><span class="string">M41rzc8141ISAlBw1rmAmLVSszojSmmuH7PZNpXkULineCPuaISQQEtWJQKBgQDD</span></span><br><span class="line"><span class="string">laVsvdEuowUsJEo+ys2VELhiAv1dUnh79u1fmrd2SV085P1WAYRqE+Y4qMvUg/em</span></span><br><span class="line"><span class="string">JVjmEeBnT+HI7fmdGpOvRyjxt92BDI5w8WVTU2lI1fqEHTpNZ9Te5WbWgfCpf9ax</span></span><br><span class="line"><span class="string">H74VzCCtT74Bq7l1kFdp0IqOKpcpJu8VtETHcG5LtQKBgQC4Tx7El1Xb4hsI4dvE</span></span><br><span class="line"><span class="string">h43j3KBb3evlz6vaqgz0BArahYAz2UkkOYDSOPs4K6aOxxXjO0BjqQqCx/tCPcU5</span></span><br><span class="line"><span class="string">AvLsTlswO+wDLXM1DoKxzFBZL5o8927niqW+vZpzyGc1uPmC1MG7+MDKdZsR+e+9</span></span><br><span class="line"><span class="string">XzJTD4slrGSJrcpLt/g/Jqqdjg==</span></span><br><span class="line"><span class="string">-----END PRIVATE KEY-----</span></span><br><span class="line"><span class="string">        )"</span>;</span><br><span class="line">        boost::asio::const_buffer cert(self_signed_cert, std::strlen(self_signed_cert));</span><br><span class="line">        boost::asio::const_buffer key(private_key, std::strlen(private_key));</span><br><span class="line"></span><br><span class="line">        http_listener_config server_config;</span><br><span class="line">        server_config.set_ssl_context_callback(</span><br><span class="line">            [&amp;](boost::asio::ssl::context&amp; ctx)</span><br><span class="line">            &#123;</span><br><span class="line">                ctx.set_options(boost::asio::ssl::context::default_workarounds);</span><br><span class="line">                ctx.use_certificate_chain(cert);</span><br><span class="line">                ctx.use_private_key(key, boost::asio::ssl::context::pem);</span><br><span class="line">            &#125;);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> nPort = <span class="number">8080</span>;</span><br><span class="line">        <span class="keyword">char</span> pAddr[<span class="number">32</span>];</span><br><span class="line">        <span class="built_in">memset</span>(pAddr,<span class="number">0</span>,<span class="keyword">sizeof</span>(pAddr));</span><br><span class="line">        <span class="built_in">sprintf</span>(pAddr,<span class="string">"https://0.0.0.0:%d"</span>,nPort);</span><br><span class="line">        utility::<span class="keyword">string_t</span> address = pAddr;<span class="comment">//U("http://0.0.0.0:8080");</span></span><br><span class="line">        <span class="function">uri_builder <span class="title">uri</span><span class="params">(address)</span></span>;</span><br><span class="line">        <span class="keyword">auto</span> addr = uri.to_uri().to_string();</span><br><span class="line">        <span class="function">CommandHandler <span class="title">handler</span><span class="params">(addr,server_config)</span></span>;</span><br><span class="line">        handler.open().wait();</span><br><span class="line">        ucout &lt;&lt; utility::<span class="keyword">string_t</span>(U(<span class="string">"Listening for requests at: "</span>)) &lt;&lt; addr &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">        ucout &lt;&lt; U(<span class="string">"Press ENTER key to quit..."</span>) &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">string</span> line;</span><br><span class="line">        <span class="built_in">std</span>::getline(<span class="built_in">std</span>::<span class="built_in">cin</span>, line);</span><br><span class="line">        handler.close().wait();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">catch</span> (<span class="built_in">std</span>::exception&amp; ex)</span><br><span class="line">    &#123;</span><br><span class="line">        ucout &lt;&lt; U(<span class="string">"Exception: "</span>) &lt;&lt; ex.what() &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">        ucout &lt;&lt; U(<span class="string">"Press ENTER key to quit..."</span>) &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">string</span> line;</span><br><span class="line">        <span class="built_in">std</span>::getline(<span class="built_in">std</span>::<span class="built_in">cin</span>, line);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>下面是访问结果</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/7310251-4c831d4de0b84339.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2218,7 +2213,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2240,7 +2235,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2293,7 +2288,7 @@
     
       <span class="post-meta-item-text">总字数&#58;</span>
     
-    <span title="总字数">8.3k</span>
+    <span title="总字数">9.1k</span>
   
 </div>
 
