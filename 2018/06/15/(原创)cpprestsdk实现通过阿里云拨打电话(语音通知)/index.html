@@ -849,7 +849,7 @@
       function renderGitment(){
         var gitment = new Gitmint({
             id: window.location.pathname, 
-            owner: 'lydit# MUST HAVE, Your Github ID',
+            owner: 'lydit',
             repo: 'lydit.github.io',
             
             lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
@@ -857,9 +857,9 @@
             oauth: {
             
             
-                client_secret: '842e333d7b3af7e1258a2fcf6a34241b07b3a2d8# EITHER this or proxy_gateway, Github access secret token for the Gitment',
+                client_secret: '842e333d7b3af7e1258a2fcf6a34241b07b3a2d8',
             
-                client_id: '2a8eb8a4852d905819d5# MUST HAVE, Github client id for the Gitment'
+                client_id: '2a8eb8a4852d905819d5'
             }});
         gitment.render('gitment-container');
       }
