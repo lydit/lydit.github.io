@@ -290,6 +290,183 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/29/(原创)cpprestsdk实现通过阿里云移动推送/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lydit">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lydit的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/29/(原创)cpprestsdk实现通过阿里云移动推送/" itemprop="url">(原创))cpprestsdk实现通过阿里云移动推送</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-29T10:18:38+08:00">
+                2018-06-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C-C/" itemprop="url" rel="index">
+                    <span itemprop="name">C/C++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  832字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>下面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br></pre></td><td class="code"><pre><span class="line">srand(time(0));//初始化的时候使用</span><br><span class="line"></span><br><span class="line">static char dec2hex(short int c)</span><br><span class="line">&#123;</span><br><span class="line">    if (0 &lt;= c &amp;&amp; c &lt;= 9)</span><br><span class="line">    &#123;</span><br><span class="line">        return c + &apos;0&apos;;</span><br><span class="line">    &#125;</span><br><span class="line">    else if (10 &lt;= c &amp;&amp; c &lt;= 15)</span><br><span class="line">    &#123;</span><br><span class="line">        return c + &apos;A&apos; - 10;</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">static char* change(char* str)</span><br><span class="line">&#123;</span><br><span class="line">//    assert(str != NULL);//断言，判断str知否指向空</span><br><span class="line">    char* pstr = str;//由于str要进行变化，以后还要用到，所以先把他用pstr存起来</span><br><span class="line">    int space_count = 0;//计数器</span><br><span class="line">    char* end = NULL;</span><br><span class="line">    char* end_new = NULL;</span><br><span class="line">    while(*str++!=&apos;\0&apos;)</span><br><span class="line">    &#123;</span><br><span class="line">        if(*str == &apos;+&apos; || *str == &apos;*&apos;)</span><br><span class="line">            space_count++;//进行空格计数</span><br><span class="line">        else if(*str == &apos;~&apos;)</span><br><span class="line">            space_count--;</span><br><span class="line">    &#125;</span><br><span class="line">    end = str;</span><br><span class="line">    end_new = end + 2*space_count;</span><br><span class="line">    str = pstr;</span><br><span class="line">    while(end != end_new)//当新结束指针和原结束指针不相等时</span><br><span class="line">    &#123;</span><br><span class="line">        if(*end == &apos;+&apos;)</span><br><span class="line">        &#123;</span><br><span class="line">            *end_new-- = &apos;0&apos;;</span><br><span class="line">            *end_new-- = &apos;2&apos;;</span><br><span class="line">            *end_new-- = &apos;%&apos;;</span><br><span class="line">            end--;</span><br><span class="line">        &#125;</span><br><span class="line">        else if(*end == &apos;*&apos;)</span><br><span class="line">        &#123;</span><br><span class="line">            *end_new-- = &apos;A&apos;;</span><br><span class="line">            *end_new-- = &apos;2&apos;;</span><br><span class="line">            *end_new-- = &apos;%&apos;;</span><br><span class="line">            end--;</span><br><span class="line">        &#125;</span><br><span class="line">        else if(*end == &apos;E&apos; &amp;&amp; *end - 1 == &apos;7&apos; &amp;&amp; *end - 2 == &apos;%&apos;)</span><br><span class="line">        &#123;</span><br><span class="line">            *end_new-- = &apos;~&apos;;</span><br><span class="line">            end -= 3;</span><br><span class="line">        &#125;</span><br><span class="line">        else//否则进行赋值</span><br><span class="line">        &#123;</span><br><span class="line">            *end_new-- = *end--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return pstr;//将变化后的字符串的首地址返回</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">static void urlencode_v30(char url[])</span><br><span class="line">&#123;</span><br><span class="line">    int i = 0;</span><br><span class="line">    int len = strlen(url);</span><br><span class="line">    int res_len = 0;</span><br><span class="line">    char res[1024*5];</span><br><span class="line">    for (i = 0; i &lt; len; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        char c = url[i];</span><br><span class="line">        if (    (&apos;0&apos; &lt;= c &amp;&amp; c &lt;= &apos;9&apos;) ||</span><br><span class="line">                (&apos;a&apos; &lt;= c &amp;&amp; c &lt;= &apos;z&apos;) ||</span><br><span class="line">                (&apos;A&apos; &lt;= c &amp;&amp; c &lt;= &apos;Z&apos;) ||</span><br><span class="line">                c == &apos;/&apos; || c == &apos;.&apos; || c == &apos;-&apos; || c == &apos;_&apos;)</span><br><span class="line">        &#123;</span><br><span class="line">            res[res_len++] = c;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            int j = (short int)c;</span><br><span class="line">            if (j &lt; 0)</span><br><span class="line">                j += 256;</span><br><span class="line">            int i1, i0;</span><br><span class="line">            i1 = j / 16;</span><br><span class="line">            i0 = j - i1 * 16;</span><br><span class="line">            res[res_len++] = &apos;%&apos;;</span><br><span class="line">            res[res_len++] = dec2hex(i1);</span><br><span class="line">            res[res_len++] = dec2hex(i0);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    res[res_len] = &apos;\0&apos;;</span><br><span class="line">//    printf(&quot;%s,Line=%d,res=%s,res_len=%d\n&quot;, __FUNCTION__,__LINE__,res,res_len);</span><br><span class="line">    strcpy(url, res);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">static char* SpecialUrlEncode(const char *pSrc)</span><br><span class="line">&#123;</span><br><span class="line">    char pTempSrc[1024*5];</span><br><span class="line">    memset(pTempSrc,0,sizeof(pTempSrc));</span><br><span class="line">    strcpy(pTempSrc,pSrc);</span><br><span class="line"></span><br><span class="line">    printf(&quot;%s,Line=%d,pTempSrc=%s\n&quot;, __FUNCTION__,__LINE__,pTempSrc);</span><br><span class="line">    urlencode_v30(pTempSrc);</span><br><span class="line"></span><br><span class="line">    char *pChange = change(pTempSrc);</span><br><span class="line">    return pChange;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int HtRestSDKDll_ALIPush(const char *pAccessKey,const char *pAccessKeySecret,const char *pAppKey,const char *pTarget,const char *pTitle,const char *pBody)</span><br><span class="line">&#123;</span><br><span class="line">    m_nReqID = rand();</span><br><span class="line">    struct timespec time;</span><br><span class="line">    clock_gettime(CLOCK_REALTIME, &amp;time);  //获取相对于1970到现在的秒数</span><br><span class="line">    struct tm nowTime;</span><br><span class="line">    gmtime_r(&amp;time.tv_sec, &amp;nowTime);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    char pTime[64],pUrlEncode_Time[256];</span><br><span class="line">    char pUrlEncode_Title[1024];</span><br><span class="line">    char pUrlEncode_Body[1024];</span><br><span class="line">    memset(pTime,0,sizeof(pTime));</span><br><span class="line">    memset(pUrlEncode_Time,0,sizeof(pUrlEncode_Time));</span><br><span class="line">    memset(pUrlEncode_Title,0,sizeof(pUrlEncode_Title));</span><br><span class="line">    memset(pUrlEncode_Body,0,sizeof(pUrlEncode_Body));</span><br><span class="line">    sprintf(pTime,&quot;%04d-%02d-%02dT%02d:%02d:%02dZ&quot;,nowTime.tm_year + 1900,nowTime.tm_mon+1,nowTime.tm_mday,nowTime.tm_hour,nowTime.tm_min,nowTime.tm_sec);</span><br><span class="line"></span><br><span class="line">    strcpy(pUrlEncode_Time,pTime);</span><br><span class="line">    strcpy(pUrlEncode_Title,pTitle);</span><br><span class="line">    strcpy(pUrlEncode_Body,pBody);</span><br><span class="line">    urlencode_v30(pUrlEncode_Time);</span><br><span class="line">    urlencode_v30(pUrlEncode_Title);</span><br><span class="line">    urlencode_v30(pUrlEncode_Body);</span><br><span class="line">    printf(&quot;%s,Line=%d,pUrlEncode_Time=%s,pUrlEncode_Title=%s,pUrlEncode_Body=%s\n&quot;, __FUNCTION__,__LINE__,pUrlEncode_Time,pUrlEncode_Title,pUrlEncode_Body);</span><br><span class="line">    char pSign[1024*5];</span><br><span class="line">    sprintf(pSign,&quot;AccessKeyId=%s&amp;Action=Push&amp;AppKey=%s&amp;Body=%s&amp;DeviceType=ALL&amp;Format=XML&amp;PushType=NOTICE&amp;RegionId=cn-hangzhou&amp;SignatureMethod=HMAC-SHA1&amp;SignatureNonce=%d&amp;SignatureVersion=1.0&amp;Target=TAG&amp;TargetValue=%s&amp;Timestamp=%s&amp;Title=%s&amp;Version=2016-08-01&quot;,</span><br><span class="line">        pAccessKey,pAppKey,pUrlEncode_Body,m_nReqID,pTarget,</span><br><span class="line">        pUrlEncode_Time,</span><br><span class="line">        pUrlEncode_Title);</span><br><span class="line"></span><br><span class="line">    sprintf(pSign,&quot;GET&amp;%s&amp;%s&quot;,&quot;%2F&quot;,SpecialUrlEncode(pSign));</span><br><span class="line"></span><br><span class="line">    unsigned char digest[64] = &#123;&apos;\0&apos;&#125;;</span><br><span class="line">    unsigned int digest_len = 0;</span><br><span class="line"></span><br><span class="line">    char pTempSecret[128];</span><br><span class="line">    memset(pTempSecret,0,sizeof(pTempSecret));</span><br><span class="line">    sprintf(pTempSecret,&quot;%s&amp;&quot;,pAccessKeySecret);</span><br><span class="line">    HMAC(EVP_sha1(), pTempSecret, strlen(pTempSecret), (unsigned char*)pSign, strlen(pSign), digest, &amp;digest_len);</span><br><span class="line"></span><br><span class="line">    std::string pBase64Rlt = base64_encode(digest, digest_len);</span><br><span class="line"></span><br><span class="line">    sprintf(pSign,&quot;http://cloudpush.aliyuncs.com/?Signature=%s&amp;AccessKeyId=%s&amp;Action=Push&amp;AppKey=%s&amp;Body=%s&amp;DeviceType=ALL&amp;Format=XML&amp;PushType=NOTICE&amp;RegionId=cn-hangzhou&amp;SignatureMethod=HMAC-SHA1&amp;SignatureNonce=%d&amp;SignatureVersion=1.0&amp;Target=TAG&amp;TargetValue=%s&amp;Timestamp=%s&amp;Title=%s&amp;Version=2016-08-01&quot;,</span><br><span class="line">    SpecialUrlEncode(pBase64Rlt.c_str()),pAccessKey,pAppKey,pUrlEncode_Body,m_nReqID,pTarget,</span><br><span class="line">        pUrlEncode_Time,</span><br><span class="line">        pUrlEncode_Title);</span><br><span class="line">    printf(&quot;%s,Line=%d,Sign=%s\n&quot;, __FUNCTION__,__LINE__,pSign);</span><br><span class="line"></span><br><span class="line">    http_client_config config;</span><br><span class="line">    config.set_timeout(utility::seconds(90)); //设置为90秒超时</span><br><span class="line">    http_client client(pSign, config);</span><br><span class="line"></span><br><span class="line">    http_request request(methods::GET);</span><br><span class="line">    request.headers().add(U(&quot;Content-Type&quot;), U(&quot;application/json&quot;));</span><br><span class="line">    client.request(request).get();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+	
+	<div>
+	  
+	</div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/15/(原创)cpprestsdk实现通过阿里云拨打电话(语音通知)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1919,183 +2096,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/15/(原创)随机串的产生,可以用于盐值/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="lydit">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lydit的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/15/(原创)随机串的产生,可以用于盐值/" itemprop="url">(原创)随机串的产生,可以用于盐值</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-15T16:16:23+08:00">
-                2017-12-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C-C/" itemprop="url" rel="index">
-                    <span itemprop="name">C/C++</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  187字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>之前要加密密码的时候，要加入盐值以加强强度，找了部分，又在网上的基础上修改了下(参考网页:<a href="http://blog.csdn.net/wangchangshuai0010/article/details/17188417" target="_blank" rel="noopener">http://blog.csdn.net/wangchangshuai0010/article/details/17188417</a>)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">//产生长度为length的随机字符串</span><br><span class="line"></span><br><span class="line">　char pSymbol[] = &#123;&apos;~&apos;,&apos;`&apos;,&apos;!&apos;,&apos;@&apos;,&apos;#&apos;,&apos;$&apos;,&apos;%&apos;,&apos;^&apos;,&apos;&amp;&apos;,</span><br><span class="line">		　　　　&apos;*&apos;,&apos;(&apos;,&apos;)&apos;,&apos;_&apos;,&apos;+&apos;,&apos;-&apos;,&apos;=&apos;,&apos;&#123;&apos;,&apos;&#125;&apos;,&apos;|&apos;,&apos;[&apos;,&apos;]&apos;,</span><br><span class="line">		　　　　&apos;:&apos;,&apos;;&apos;,&apos;&lt;&apos;,&apos;&gt;&apos;,&apos;?&apos;,</span><br><span class="line">		　　　　&apos;,&apos;,&apos;.&apos;,&apos;\&quot;&apos;,&apos;\\&apos;,&apos;\&apos;&apos;,&apos;/&apos;&#125;;</span><br><span class="line">char* getRandomString(int length)  </span><br><span class="line">&#123;  </span><br><span class="line">    int nRand, i;  </span><br><span class="line">    char* string;  </span><br><span class="line">    srand((unsigned) time(NULL ));  </span><br><span class="line">    if ((string = (char*) malloc(length + 1)) == NULL )  </span><br><span class="line">        return NULL ;  </span><br><span class="line">  </span><br><span class="line">    for (i = 0; i &lt; length - 1; i++)  </span><br><span class="line">    &#123;  </span><br><span class="line">        nRand = rand() % (sizeof(pSymbol) + 26 * 2 + 10);</span><br><span class="line">        if (nRand &gt;= 0)</span><br><span class="line">        &#123;</span><br><span class="line">            if (nRand &lt; 26)</span><br><span class="line">                string[i] = &apos;A&apos; + nRand;  </span><br><span class="line">            else if (nRand &lt; 52)</span><br><span class="line">                string[i] = &apos;a&apos; + nRand - 26;  </span><br><span class="line">            else if (nRand &lt; 62)</span><br><span class="line">                string[i] = &apos;1&apos; + nRand - 52;</span><br><span class="line">            else if(nRand - 62 &lt; sizeof(pSymbol))</span><br><span class="line">                string[i] = pSymbol[nRand - 62];</span><br><span class="line">            else</span><br><span class="line">                string[i] = &apos;x&apos;;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">            string[i] = &apos;x&apos;;</span><br><span class="line">    &#125;  </span><br><span class="line">    string[length] = &apos;\0&apos;;  </span><br><span class="line">    return string;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-	
-	<div>
-	  
-	</div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2150,7 +2150,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2225,7 +2225,7 @@
     
       <span class="post-meta-item-text">总字数&#58;</span>
     
-    <span title="总字数">9.1k</span>
+    <span title="总字数">10.0k</span>
   
 </div>
 
