@@ -96,7 +96,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="lydit的博客">
-<meta property="og:url" content="http://yoursite.com/tags/Linux/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/linux/index.html">
 <meta property="og:site_name" content="lydit的博客">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
@@ -130,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/Linux/"/>
+  <link rel="canonical" href="http://yoursite.com/tags/linux/"/>
 
 
 
 
 
-  <title>标签: Linux | lydit的博客</title>
+  <title>标签: linux | lydit的博客</title>
   
 
 
@@ -290,7 +290,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>Linux<small>标签</small>
+        <h1>linux<small>标签</small>
         </h1>
       </div>
 
@@ -302,37 +302,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2017/12/15/(原创)解决ssh登录linux速度慢的问题(以centos7为例)/" itemprop="url">
+            <a class="post-title-link" href="/2017/12/29/(原创)sem_wait实现毫秒级延时/" itemprop="url">
               
-                <span itemprop="name">(原创)解决ssh登录linux速度慢的问题(以centos7为例)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-15T16:50:52+08:00"
-              content="2017-12-15" >
-          12-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/15/(原创)linux下Microsoftcpprestsdk支持https(server)/" itemprop="url">
-              
-                <span itemprop="name">(原创)linux下Microsoftcpprestsdk支持https(server)</span>
+                <span itemprop="name">(原创)sem_wait实现毫秒级延时</span>
               
             </a>
         
@@ -340,9 +312,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-15T16:15:23+08:00"
-              content="2017-12-15" >
-          12-15
+              datetime="2017-12-29T14:30:14+08:00"
+              content="2017-12-29" >
+          12-29
         </time>
       </div>
 
@@ -986,6 +958,51 @@
       e.stopPropagation();
       if (isfetched === false) {
         searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+  
+</body>
+</html>
+', 'local-search-result');
       } else {
         proceedsearch();
       };
