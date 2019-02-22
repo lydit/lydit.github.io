@@ -298,6 +298,226 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/22/20/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lydit">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lydit的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/22/20/" itemprop="url">(转载)<编译>条件编译——判断当前使用的编译器及操作系统</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-22T09:10:03+08:00">
+                2019-02-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C-C/" itemprop="url" rel="index">
+                    <span itemprop="name">C/C++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  289字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>原文地址:<a href="https://www.cnblogs.com/foundkey/p/5970109.html" target="_blank" rel="noopener">https://www.cnblogs.com/foundkey/p/5970109.html</a><br>有时候编译需要多平台运行的代码，需要一些条件编译，经常忘记，这里专门记录一下，方便下次查找。</p>
+<p>编译器<br>GCC</p>
+<p>#ifdef <strong>GNUC</strong></p>
+<p>#if <strong>GNUC</strong> &gt;= 3 // GCC3.0以上</p>
+<p>Visual C++</p>
+<p>#ifdef _MSC_VER</p>
+<p>#if _MSC_VER &gt;=1000 // VC++4.0以上</p>
+<p>#if _MSC_VER &gt;=1100 // VC++5.0以上</p>
+<p>#if _MSC_VER &gt;=1200 // VC++6.0以上</p>
+<p>#if _MSC_VER &gt;=1300 // VC2003以上</p>
+<p>#if _MSC_VER &gt;=1400 // VC2005以上</p>
+<p>Borland C++</p>
+<p>#ifdef <strong>BORLANDC</strong></p>
+<p>Cygwin</p>
+<p>#ifdef <strong>CYGWIN</strong></p>
+<p>#ifdef <strong>CYGWIN32</strong>    //</p>
+<p>MinGW</p>
+<p>#ifdef <strong>MINGW32</strong></p>
+<p>操作系统<br>Windows</p>
+<p>#ifdef _WIN32    //32bit</p>
+<p>#ifdef _WIN64    //64bit</p>
+<p>#ifdef _WINDOWS     //图形界面程序</p>
+<p>#ifdef _CONSOLE     //控制台程序<br>//Windows（95/98/Me/NT/2000/XP/Vista）和Windows CE都定义了</p>
+<p>#if (WINVER &gt;= 0x030a)     // Windows 3.1以上</p>
+<p>#if (WINVER &gt;= 0x0400)     // Windows 95/NT4.0以上</p>
+<p>#if (WINVER &gt;= 0x0410)     // Windows 98以上</p>
+<p>#if (WINVER &gt;= 0x0500)     // Windows Me/2000以上</p>
+<p>#if (WINVER &gt;= 0x0501)     // Windows XP以上</p>
+<p>#if (WINVER &gt;= 0x0600)     // Windows Vista以上<br>//_WIN32_WINNT 内核版本</p>
+<p>#if (_WIN32_WINNT &gt;= 0x0500) // Windows 2000以上</p>
+<p>#if (_WIN32_WINNT &gt;= 0x0501) // Windows XP以上</p>
+<p>#if (_WIN32_WINNT &gt;= 0x0600) // Windows Vista以上</p>
+<p>UNIX</p>
+<p>#ifdef __unix<br>//or</p>
+<p>#ifdef <strong>unix</strong></p>
+<p>Linux</p>
+<p>#ifdef __linux<br>//or</p>
+<p>#ifdef <strong>linux</strong></p>
+<p>FreeBSD</p>
+<p>#ifdef <strong>FreeBSD</strong></p>
+<p>NetBSD</p>
+<p>#ifdef <strong>NetBSD</strong></p>
+<p>Qt特有</p>
+<p><qtglobal.h>定义了Q<em>OS</em><em>和Q<em>WS</em></em>系列用于判断操作系统。Q<em>CC</em>*系列判断编译器。<br>具体的可以在Qt Assistant里索引qtglobal.h查看。</qtglobal.h></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+	
+	<div>
+	  
+	</div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/09/12/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1883,212 +2103,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/18/15/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="lydit">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lydit的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/18/15/" itemprop="url">(转载)error LNK2005 ...already defined in MSVCRTD</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-18T15:51:22+08:00">
-                2017-12-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C-C/" itemprop="url" rel="index">
-                    <span itemprop="name">C/C++</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  375字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>编译错误：</p>
-<p>Error1error LNK2005: _CrtSetCheckCount already defined in MSVCRTD.lib(MSVCR110D.dll)\libcmtd.lib(dbgheap.obj)</p>
-<p>Error2error LNK2005: _calloc_dbg already defined in MSVCRTD.lib(MSVCR110D.dll)\libcmtd.lib(dbgheap.obj)</p>
-<p>Error3error LNK2005: _free_dbg already defined in MSVCRTD.lib(MSVCR110D.dll)\libcmtd.lib(dbgheap.obj)</p>
-<p>Error4error LNK2005: _malloc_dbg already defined in MSVCRTD.lib(MSVCR110D.dll)\libcmtd.lib(dbgheap.obj)</p>
-<p>Error5error LNK2005: _amsg_exit already defined in MSVCRTD.lib(MSVCR110D.dll)\libcmtd.lib(crt0dat.obj)</p>
-<p>Error6error LNK2005: _initterm_e already defined in MSVCRTD.lib(MSVCR110D.dll)\libcmtd.lib(crt0dat.obj)</p>
-<p>Error7error LNK2005: __CppXcptFilter already defined in MSVCRTD.lib(MSVCR110D.dll)\libcmtd.lib(winxfltr.obj)</p>
-<p>Error8error LNK2005: __crtCaptureCurrentContext already defined in MSVCRTD.lib(MSVCR110D.dll)\libcmtd.lib(winapisupp.obj)</p>
-<p>Error9error LNK2005: __crtCapturePreviousContext already defined in MSVCRTD.lib(MSVCR110D.dll)\libcmtd.lib(winapisupp.obj)</p>
-<p>Error10error LNK2005: __crtTerminateProcess already defined in MSVCRTD.lib(MSVCR110D.dll)\libcmtd.lib(winapisupp.obj)</p>
-<p>Error11error LNK2005: __crtUnhandledException already defined in MSVCRTD.lib(MSVCR110D.dll)\libcmtd.lib(winapisupp.obj)</p>
-<p>Error12error LNK2005: _lock already defined in MSVCRTD.lib(MSVCR110D.dll)\libcmtd.lib(mlock.obj)</p>
-<p>Error13error LNK2005: _unlock already defined in MSVCRTD.lib(MSVCR110D.dll)\libcmtd.lib(mlock.obj)</p>
-<p>Error14error LNK2005: __crt_debugger_hook already defined in MSVCRTD.lib(MSVCR110D.dll)\libcmtd.lib(dbghook.obj)</p>
-<p>Error15error LNK2005: “void __cdecl terminate(void)” (?terminate@@YAXXZ) already defined in MSVCRTD.lib(MSVCR110D.dll)\libcmtd.lib(hooks.obj)</p>
-<p>Error16error LNK2005: __xi_a already defined in MSVCRTD.lib(cinitexe.obj)\libcmtd.lib(crt0init.obj)</p>
-<p>Error17error LNK2005: __xi_z already defined in MSVCRTD.lib(cinitexe.obj)\libcmtd.lib(crt0init.obj)</p>
-<p>Error18error LNK2005: __xc_a already defined in MSVCRTD.lib(cinitexe.obj)\libcmtd.lib(crt0init.obj)</p>
-<p>Error19error LNK2005: __xc_z already defined in MSVCRTD.lib(cinitexe.obj)\libcmtd.lib(crt0init.obj)</p>
-<p>Error20error LNK2005: __iob_func already defined in MSVCRTD.lib(MSVCR110D.dll)\libcmtd.lib(_file.obj)</p>
-<p>Error21error LNK2005: _CrtDbgReportW already defined in MSVCRTD.lib(MSVCR110D.dll)\libcmtd.lib(dbgrptw.obj)</p>
-<p>原因：静态库或动态库编译时的设置的Runtime Library和当前工程不一样</p>
-<p>解决办法：工程Property -&gt; C/C++ -&gt; Code Generation -&gt; Runtime Library设置为统一的，例如Debug模式下，统一为MTd，Release模式下统一为MT</p>
-<p>转自：<a href="http://blog.csdn.net/kuikuijia/article/details/48056047" target="_blank" rel="noopener">http://blog.csdn.net/kuikuijia/article/details/48056047</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-	
-	<div>
-	  
-	</div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2138,7 +2157,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2160,7 +2179,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2213,7 +2232,7 @@
     
       <span class="post-meta-item-text">总字数&#58;</span>
     
-    <span title="总字数">10.9k</span>
+    <span title="总字数">11.2k</span>
   
 </div>
 

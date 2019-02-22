@@ -83,7 +83,7 @@
 
 
 
-  <meta name="keywords" content="MFC," />
+  <meta name="keywords" content="编译器,c,c++," />
 
 
 
@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243BOOL bInsertFlag = TRUE;    CString szPubFile = &amp;quot;&amp;quot;;    CFileDialog dlgFileOpen(TRUE, NULL,NULL, OFN_HIDEREADONLY|">
-<meta name="keywords" content="MFC">
+<meta name="description" content="原文地址:https://www.cnblogs.com/foundkey/p/5970109.html有时候编译需要多平台运行的代码，需要一些条件编译，经常忘记，这里专门记录一下，方便下次查找。 编译器GCC #ifdef GNUC #if GNUC &amp;gt;= 3 // GCC3.0以上 Visual C++ #ifdef _MSC_VER #if _MSC_VER &amp;gt;=1000 //">
+<meta name="keywords" content="编译器,c,c++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="(原创)批量选择文件">
-<meta property="og:url" content="http://yoursite.com/2018/02/02/11/index.html">
+<meta property="og:title" content="(转载)&lt;编译&gt;条件编译——判断当前使用的编译器及操作系统">
+<meta property="og:url" content="http://yoursite.com/2019/02/22/20/index.html">
 <meta property="og:site_name" content="lydit的博客">
-<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243BOOL bInsertFlag = TRUE;    CString szPubFile = &amp;quot;&amp;quot;;    CFileDialog dlgFileOpen(TRUE, NULL,NULL, OFN_HIDEREADONLY|">
+<meta property="og:description" content="原文地址:https://www.cnblogs.com/foundkey/p/5970109.html有时候编译需要多平台运行的代码，需要一些条件编译，经常忘记，这里专门记录一下，方便下次查找。 编译器GCC #ifdef GNUC #if GNUC &amp;gt;= 3 // GCC3.0以上 Visual C++ #ifdef _MSC_VER #if _MSC_VER &amp;gt;=1000 //">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-02T09:16:51.837Z">
+<meta property="og:updated_time" content="2019-02-22T01:10:03.967Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="(原创)批量选择文件">
-<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243BOOL bInsertFlag = TRUE;    CString szPubFile = &amp;quot;&amp;quot;;    CFileDialog dlgFileOpen(TRUE, NULL,NULL, OFN_HIDEREADONLY|">
+<meta name="twitter:title" content="(转载)&lt;编译&gt;条件编译——判断当前使用的编译器及操作系统">
+<meta name="twitter:description" content="原文地址:https://www.cnblogs.com/foundkey/p/5970109.html有时候编译需要多平台运行的代码，需要一些条件编译，经常忘记，这里专门记录一下，方便下次查找。 编译器GCC #ifdef GNUC #if GNUC &amp;gt;= 3 // GCC3.0以上 Visual C++ #ifdef _MSC_VER #if _MSC_VER &amp;gt;=1000 //">
 
 
 
@@ -135,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/02/02/11/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/02/22/20/"/>
 
 
 
 
 
-  <title>(原创)批量选择文件 | lydit的博客</title>
+  <title>(转载)<编译>条件编译——判断当前使用的编译器及操作系统 | lydit的博客</title>
   
 
 
@@ -302,7 +302,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/02/11/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/22/20/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lydit">
@@ -319,7 +319,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">(原创)批量选择文件</h1>
+          <h1 class="post-title" itemprop="name headline">(转载)<编译>条件编译——判断当前使用的编译器及操作系统</h1>
         
 
         <div class="post-meta">
@@ -331,8 +331,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-02T17:16:51+08:00">
-                2018-02-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-22T09:10:03+08:00">
+                2019-02-22
               </time>
             
 
@@ -372,8 +372,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/02/02/11/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/02/02/11/" itemprop="commentsCount"></span>
+                <a href="/2019/02/22/20/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/02/22/20/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -400,7 +400,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  204字
+                  289字
                 </span>
               
 
@@ -437,7 +437,50 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">BOOL bInsertFlag = TRUE;</span><br><span class="line">    CString szPubFile = &quot;&quot;;</span><br><span class="line"></span><br><span class="line">    CFileDialog dlgFileOpen(TRUE, NULL,NULL, OFN_HIDEREADONLY|OFN_OVERWRITEPROMPT|OFN_ALLOWMULTISELECT | OFN_ENABLESIZING,</span><br><span class="line">        &quot;jpg(*.jpg)|*.jpg|jpeg(*.jpeg)|*.jpeg|png(*.png)|*.png|avi(*.avi)|*.avi|mp4(*.mp4)|*.mp4|txt(*.txt)|*.txt|&quot;,NULL);</span><br><span class="line"></span><br><span class="line">    //最多可以打开500个文件</span><br><span class="line">    dlgFileOpen.m_ofn.nMaxFile = 500 * MAX_PATH;</span><br><span class="line"></span><br><span class="line">    char* ch = new TCHAR[dlgFileOpen.m_ofn.nMaxFile];</span><br><span class="line">    dlgFileOpen.m_ofn.lpstrFile = ch;</span><br><span class="line"></span><br><span class="line">    //对内存块清零</span><br><span class="line">    ZeroMemory(dlgFileOpen.m_ofn.lpstrFile,sizeof(TCHAR) * dlgFileOpen.m_ofn.nMaxFile);</span><br><span class="line"></span><br><span class="line">    //显示文件对话框，获得文件名集合</span><br><span class="line">    if(dlgFileOpen.DoModal() == IDOK)&#123;</span><br><span class="line"></span><br><span class="line">        //获取第一个文件的位置</span><br><span class="line">        POSITION pos_file;</span><br><span class="line">        pos_file = dlgFileOpen.GetStartPosition();</span><br><span class="line"></span><br><span class="line">        while(pos_file != NULL)&#123;</span><br><span class="line"></span><br><span class="line">            bInsertFlag  = TRUE;</span><br><span class="line">            szPubFile = dlgFileOpen.GetNextPathName(pos_file);</span><br><span class="line">            for (int i = 0; i &lt; m_list1.GetItemCount(); i++)</span><br><span class="line">            &#123;</span><br><span class="line">                if (GetFileName(szPubFile) == GetFileName(m_list1.GetItemText(i,1)))</span><br><span class="line">                &#123;</span><br><span class="line">                    bInsertFlag = FALSE;</span><br><span class="line">//                    CString szNotify;</span><br><span class="line">//                    szNotify.Format(&quot;%s(%s:%d)&quot;,Get_Resource_String(IDS_STR39),Get_Resource_String(IDS_STR35),i+1);</span><br><span class="line">//                    MessageBox(szNotify,Get_Resource_String(IDS_STR20),MB_OK|MB_ICONINFORMATION);</span><br><span class="line">//                    return;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            if(bInsertFlag)</span><br><span class="line">                FileInsert(szPubFile,PUBFILESTATE_WAITFORUPLOAD);</span><br><span class="line"></span><br><span class="line">        &#125;     </span><br><span class="line">    &#125;</span><br><span class="line">    delete[] ch;</span><br></pre></td></tr></table></figure>
+        <p>原文地址:<a href="https://www.cnblogs.com/foundkey/p/5970109.html" target="_blank" rel="noopener">https://www.cnblogs.com/foundkey/p/5970109.html</a><br>有时候编译需要多平台运行的代码，需要一些条件编译，经常忘记，这里专门记录一下，方便下次查找。</p>
+<p>编译器<br>GCC</p>
+<p>#ifdef <strong>GNUC</strong></p>
+<p>#if <strong>GNUC</strong> &gt;= 3 // GCC3.0以上</p>
+<p>Visual C++</p>
+<p>#ifdef _MSC_VER</p>
+<p>#if _MSC_VER &gt;=1000 // VC++4.0以上</p>
+<p>#if _MSC_VER &gt;=1100 // VC++5.0以上</p>
+<p>#if _MSC_VER &gt;=1200 // VC++6.0以上</p>
+<p>#if _MSC_VER &gt;=1300 // VC2003以上</p>
+<p>#if _MSC_VER &gt;=1400 // VC2005以上</p>
+<p>Borland C++</p>
+<p>#ifdef <strong>BORLANDC</strong></p>
+<p>Cygwin</p>
+<p>#ifdef <strong>CYGWIN</strong></p>
+<p>#ifdef <strong>CYGWIN32</strong>    //</p>
+<p>MinGW</p>
+<p>#ifdef <strong>MINGW32</strong></p>
+<p>操作系统<br>Windows</p>
+<p>#ifdef _WIN32    //32bit</p>
+<p>#ifdef _WIN64    //64bit</p>
+<p>#ifdef _WINDOWS     //图形界面程序</p>
+<p>#ifdef _CONSOLE     //控制台程序<br>//Windows（95/98/Me/NT/2000/XP/Vista）和Windows CE都定义了</p>
+<p>#if (WINVER &gt;= 0x030a)     // Windows 3.1以上</p>
+<p>#if (WINVER &gt;= 0x0400)     // Windows 95/NT4.0以上</p>
+<p>#if (WINVER &gt;= 0x0410)     // Windows 98以上</p>
+<p>#if (WINVER &gt;= 0x0500)     // Windows Me/2000以上</p>
+<p>#if (WINVER &gt;= 0x0501)     // Windows XP以上</p>
+<p>#if (WINVER &gt;= 0x0600)     // Windows Vista以上<br>//_WIN32_WINNT 内核版本</p>
+<p>#if (_WIN32_WINNT &gt;= 0x0500) // Windows 2000以上</p>
+<p>#if (_WIN32_WINNT &gt;= 0x0501) // Windows XP以上</p>
+<p>#if (_WIN32_WINNT &gt;= 0x0600) // Windows Vista以上</p>
+<p>UNIX</p>
+<p>#ifdef __unix<br>//or</p>
+<p>#ifdef <strong>unix</strong></p>
+<p>Linux</p>
+<p>#ifdef __linux<br>//or</p>
+<p>#ifdef <strong>linux</strong></p>
+<p>FreeBSD</p>
+<p>#ifdef <strong>FreeBSD</strong></p>
+<p>NetBSD</p>
+<p>#ifdef <strong>NetBSD</strong></p>
+<p>Qt特有</p>
+<p><qtglobal.h>定义了Q<em>OS</em><em>和Q<em>WS</em></em>系列用于判断操作系统。Q<em>CC</em>*系列判断编译器。<br>具体的可以在Qt Assistant里索引qtglobal.h查看。</qtglobal.h></p>
 
       
     </div>
@@ -483,7 +526,7 @@
         <ul class="post-copyright">
   <li class="post-copyright-author">
     <strong>本文标题:</strong>
-    <a href="/2018/02/02/11/">(原创)批量选择文件</a>
+    <a href="/2019/02/22/20/">(转载)<编译>条件编译——判断当前使用的编译器及操作系统</a>
   </li>
   <li class="post-copyright-author">
     <strong>本文作者：</strong>
@@ -491,15 +534,15 @@
   </li>
   <li class="post-copyright-author">
     <strong>发布时间:</strong>
-    2018年02月02日 - 17:02
+    2019年02月22日 - 09:02
   </li>
   <li class="post-copyright-author">
     <strong>最后更新:</strong>
-    2018年02月02日 - 17:02
+    2019年02月22日 - 09:02
   </li>
   <li class="post-copyright-link">
     <strong>本文链接</strong>
-    <a href="https://lydit.github.io/2018/02/02/11/" title="https://lydit.github.io/2018/02/02/11/">https://lydit.github.io/2018/02/02/11/</a>
+    <a href="https://lydit.github.io/2019/02/22/20/" title="https://lydit.github.io/2019/02/22/20/">https://lydit.github.io/2019/02/22/20/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -523,7 +566,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/MFC/" rel="tag"># MFC</a>
+            <a href="/tags/编译器/" rel="tag"># 编译器</a>
+          
+            <a href="/tags/c/" rel="tag"># c</a>
+          
+            <a href="/tags/c/" rel="tag"># c++</a>
           
         </div>
       
@@ -536,8 +583,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/02/14/" rel="next" title="(原创)在指定区域显示图片">
-                <i class="fa fa-chevron-left"></i> (原创)在指定区域显示图片
+              <a href="/2018/11/09/12/" rel="next" title="(原创)使用exosip5.0版本实现GB28181中的bug">
+                <i class="fa fa-chevron-left"></i> (原创)使用exosip5.0版本实现GB28181中的bug
               </a>
             
           </div>
@@ -545,10 +592,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/02/22/8/" rel="prev" title="(原创)vc6修改系统控件默认风格">
-                (原创)vc6修改系统控件默认风格 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -921,7 +964,7 @@
       <script type="text/javascript">
       function renderGitment(){
         var gitment = new Gitmint({
-            id: '1517563011611', 
+            id: '1550797803675', 
             owner: 'lydit',
             repo: 'lydit.github.io',
             
