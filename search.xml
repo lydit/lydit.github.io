@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[(原创)GM时间跟本地时间的互相转换]]></title>
+    <url>%2F2019%2F04%2F01%2F21%2F</url>
+    <content type="text"><![CDATA[代码直接上了，当gm时间转本地时间时，在windows下面没有timegm函数，但是可以通过mktime函数减去timezone变量(timezone是C runtime libary的全局变量)来获取1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556bool LocalTimeToUTC(MY_TIME_T *pTime)&#123; struct tm newtime; newtime.tm_year = pTime-&gt;u16Year - 1900; newtime.tm_mon = pTime-&gt;u8Month - 1; newtime.tm_mday = pTime-&gt;u8Day; newtime.tm_hour = pTime-&gt;u8Hour; newtime.tm_min = pTime-&gt;u8Minute; newtime.tm_sec = pTime-&gt;u8Second; newtime.tm_wday = 0; newtime.tm_yday =0; newtime.tm_isdst = 0; time_t time = mktime(&amp;newtime); struct tm *pnewtime; pnewtime = gmtime(&amp;time); if(pnewtime != NULL) &#123; pTime-&gt;u16Year = pnewtime-&gt;tm_year + 1900; pTime-&gt;u8Month = pnewtime-&gt;tm_mon + 1; pTime-&gt;u8Day = pnewtime-&gt;tm_mday; pTime-&gt;u8Hour = pnewtime-&gt;tm_hour; pTime-&gt;u8Minute = pnewtime-&gt;tm_min; pTime-&gt;u8Second = pnewtime-&gt;tm_sec; &#125; return true;&#125;bool UTCTimeToLocal(MY_TIME_T *pTime)&#123; struct tm newtime; newtime.tm_year = pTime-&gt;u16Year - 1900; newtime.tm_mon = pTime-&gt;u8Month - 1; newtime.tm_mday = pTime-&gt;u8Day; newtime.tm_hour = pTime-&gt;u8Hour; newtime.tm_min = pTime-&gt;u8Minute; newtime.tm_sec = pTime-&gt;u8Second; newtime.tm_wday = 0; newtime.tm_yday = 0; newtime.tm_isdst = 0; time_t time = mktime(&amp;newtime) - timezone; struct tm *pnewtime; pnewtime = localtime(&amp;time); if (pnewtime != NULL) &#123; pTime-&gt;u16Year = pnewtime-&gt;tm_year + 1900; pTime-&gt;u8Month = pnewtime-&gt;tm_mon + 1; pTime-&gt;u8Day = pnewtime-&gt;tm_mday; pTime-&gt;u8Hour = pnewtime-&gt;tm_hour; pTime-&gt;u8Minute = pnewtime-&gt;tm_min; pTime-&gt;u8Second = pnewtime-&gt;tm_sec; &#125; return true;&#125;]]></content>
+      <categories>
+        <category>C/C++</category>
+      </categories>
+      <tags>
+        <tag>c</tag>
+        <tag>c++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[(转载)条件编译——判断当前使用的编译器及操作系统]]></title>
     <url>%2F2019%2F02%2F22%2F20%2F</url>
     <content type="text"><![CDATA[原文地址:https://www.cnblogs.com/foundkey/p/5970109.html有时候编译需要多平台运行的代码，需要一些条件编译，经常忘记，这里专门记录一下，方便下次查找。 编译器GCC #ifdef GNUC #if GNUC &gt;= 3 // GCC3.0以上 Visual C++ #ifdef _MSC_VER #if _MSC_VER &gt;=1000 // VC++4.0以上 #if _MSC_VER &gt;=1100 // VC++5.0以上 #if _MSC_VER &gt;=1200 // VC++6.0以上 #if _MSC_VER &gt;=1300 // VC2003以上 #if _MSC_VER &gt;=1400 // VC2005以上 Borland C++ #ifdef BORLANDC Cygwin #ifdef CYGWIN #ifdef CYGWIN32 // MinGW #ifdef MINGW32 操作系统Windows #ifdef _WIN32 //32bit #ifdef _WIN64 //64bit #ifdef _WINDOWS //图形界面程序 #ifdef _CONSOLE //控制台程序//Windows（95/98/Me/NT/2000/XP/Vista）和Windows CE都定义了 #if (WINVER &gt;= 0x030a) // Windows 3.1以上 #if (WINVER &gt;= 0x0400) // Windows 95/NT4.0以上 #if (WINVER &gt;= 0x0410) // Windows 98以上 #if (WINVER &gt;= 0x0500) // Windows Me/2000以上 #if (WINVER &gt;= 0x0501) // Windows XP以上 #if (WINVER &gt;= 0x0600) // Windows Vista以上//_WIN32_WINNT 内核版本 #if (_WIN32_WINNT &gt;= 0x0500) // Windows 2000以上 #if (_WIN32_WINNT &gt;= 0x0501) // Windows XP以上 #if (_WIN32_WINNT &gt;= 0x0600) // Windows Vista以上 UNIX #ifdef __unix//or #ifdef unix Linux #ifdef __linux//or #ifdef linux FreeBSD #ifdef FreeBSD NetBSD #ifdef NetBSD Qt特有 定义了QOS和QWS系列用于判断操作系统。QCC*系列判断编译器。具体的可以在Qt Assistant里索引qtglobal.h查看。]]></content>
@@ -8,9 +20,9 @@
         <category>C/C++</category>
       </categories>
       <tags>
-        <tag>编译器</tag>
         <tag>c</tag>
         <tag>c++</tag>
+        <tag>编译器</tag>
       </tags>
   </entry>
   <entry>
