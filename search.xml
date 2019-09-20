@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[(原创)GMT时间转本地时间]]></title>
+    <url>%2F2019%2F09%2F20%2F23%2F</url>
+    <content type="text"><![CDATA[代码直接上了，其中timezone是C runtime libary的全局变量123456789101112131415161718192021222324252627282930CString GMTToLocalTime(const char *pGMTTimeToLocalTime)&#123; struct tm newtime; CString szTime = &quot;&quot;; if (strlen(pGMTTimeToLocalTime) &gt; 0) &#123; int nYear,nMonth,nDay,nHour,nMinute,nSecode,nMs; sscanf(pGMTTimeToLocalTime,&quot;%04d-%02d-%02dT%02d:%02d:%02d.%dZ&quot;, &amp;nYear,&amp;nMonth,&amp;nDay,&amp;nHour,&amp;nMinute,&amp;nSecode,&amp;nMs); newtime.tm_year = nYear - 1900; newtime.tm_mon = nMonth - 1; newtime.tm_mday = nDay; newtime.tm_hour = nHour; newtime.tm_min = nMinute; newtime.tm_sec = nSecode; newtime.tm_wday = 0; newtime.tm_yday =0; newtime.tm_isdst = 0; long time = mktime(&amp;newtime) - timezone; struct tm *pnewtime; pnewtime = localtime(&amp;time); if (NULL != pnewtime) &#123; szTime.Format(&quot;%04d-%02d-%02dT%02d:%02d:%02d.%dZ&quot;, pnewtime-&gt;tm_year + 1900 ,pnewtime-&gt;tm_mon + 1, pnewtime-&gt;tm_mday,pnewtime-&gt;tm_hour,pnewtime-&gt;tm_min,pnewtime-&gt;tm_sec,nMs); &#125; &#125; return szTime;&#125;]]></content>
+      <categories>
+        <category>C/C++</category>
+      </categories>
+      <tags>
+        <tag>c</tag>
+        <tag>c++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[(原创)URL编码实现]]></title>
     <url>%2F2019%2F07%2F11%2F22%2F</url>
     <content type="text"><![CDATA[代码直接上了，切记,代码中的42行跟43行的&amp;F运算一定要加，不然的话，汉字url编码会有问题的12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970/*** @param s 需要编码的url字符串* @param len 需要编码的url的长度* @param new_length 编码后的url的长度* @return char * 返回编码后的url* @note 存储编码后的url存储在一个新审请的内存中，* 用完后，调用者应该释放它*/static char * urlencode(char *s, int len, int *new_length)&#123; printf( s); printf(&quot;\n&quot;); char *from, *start, *end, *to; from = s; end = s + len; start = to = (char *) malloc(3 * len + 1); char hexchars[] = &quot;0123456789ABCDEF&quot;; char c; while (from &lt; end) &#123; c = *from++; if (c == &apos; &apos;) &#123; *to++ = &apos;+&apos;; &#125; else if ( (&apos;0&apos; &lt;= c &amp;&amp; c &lt;= &apos;9&apos;) || (&apos;a&apos; &lt;= c &amp;&amp; c &lt;= &apos;z&apos;) || (&apos;A&apos; &lt;= c &amp;&amp; c &lt;= &apos;Z&apos;) || c == &apos;/&apos; || c == &apos;.&apos; || c == &apos;-&apos; || c == &apos;_&apos; || c == &apos;=&apos; || c == &apos;&amp;&apos;) &#123; *to++ = c; &#125; else &#123; to[0] = &apos;%&apos;; to[1] = hexchars[(c &gt;&gt; 4)&amp;0xF]; to[2] = hexchars[(c &amp; 15)&amp;0xF]; to += 3; &#125; &#125; *to = 0; if (new_length) &#123; *new_length = to - start; &#125; return (char *) start;&#125;static char* urlencode_v20(const char *s,char *pDes)&#123; char pTemp[1024*5]; char pTemp2[1024]; memset(pTemp,0,sizeof(pTemp)); memset(pTemp2,0,sizeof(pTemp2)); strcpy(pTemp,s); int nNewLen = 0; char *pUrlEncode = urlencode(pTemp, strlen(pTemp), &amp;nNewLen); memset(pTemp,0,sizeof(pTemp)); strcpy(pTemp,pUrlEncode); free(pUrlEncode); pUrlEncode = NULL; strcpy(pDes,pTemp); return pDes;&#125;]]></content>
